@@ -1,0 +1,26 @@
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+    --color-background: #adadad;
+    
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0 auto;
+    padding: 0;
+    background-color: var(--color-background);
+    width: 80%;
+    font-size: 2rem
+    
+}
+label, input{
+    font-size: 2rem;
+}
