@@ -26,18 +26,18 @@
     <!-- Exercici 1.1.1 -->
 
     <h3>Exercici 1.1.2</h3>
-    <button type="button" id="buttonRandom">Enviar</button>
+    <button type="button" id="buttonRandom">Comprovar</button>
     <p id="result12"></p>
     <!-- Exercici 1.1.2 -->
 
     <form id="form3">
         <h3>Exercici 1.1.3</h3>
         <div>
-            <label for="inputName">Introdueix el teu nom</label>
+            <label for="inputName">Introdueix un nom</label>
             <input type="text" id="inputName" placeholder="ex: Joan, Pere, Francesc" required>
         </div>
         
-        <button type="submit">Enviar</button>
+        <button type="submit">Enviar Salutacio</button>
     </form>
     <p id="resultPerson"></p>
     <!-- Exercici 1.1.3 -->
@@ -52,7 +52,7 @@
     <p>*El resultat s'imprimeix a la "consola"</p>
     <!-- Exercici 1.1.5 -->
 
-    
+    <h2>Exercici 1.2: Operador ternari</h2>
     <form id="form4">
         <h3>Exercici 1.2.1</h3>
         <div>
@@ -84,7 +84,7 @@
         <h3>Exercici 1.2.3 -> a</h3>
         <div>
             <label for="inputTypeNumber">Introdueix un número</label>
-            <input type="number" id="inputTypeNumber" placeholder="ex:-5, 12, 40">
+            <input type="number" id="inputTypeNumber" placeholder="ex:-5, 12, 40" required>
         </div>
         <button type="submit">Enviar</button>
     </form>
@@ -94,15 +94,15 @@
         <h3>Exercici 1.2.3 -> b</h3>
         <div>
             <label for="maxInput1">Introdueix el primer número</label>
-            <input type="number" id="maxInput1" placeholder="ex:-5, 12, 40">
+            <input type="number" id="maxInput1" placeholder="ex:-5, 12, 40" required>
         </div>
         <div>
-            <label for="maxInput2">Introdueix el primer número</label>
-            <input type="number" id="maxInput2" placeholder="ex:-5, 12, 40">
+            <label for="maxInput2">Introdueix el segon número</label>
+            <input type="number" id="maxInput2" placeholder="ex:-5, 12, 40" required>
         </div>
         <div>
-            <label for="maxInput3">Introdueix el primer número</label>
-            <input type="number" id="maxInput3" placeholder="ex:-5, 12, 40">
+            <label for="maxInput3">Introdueix el tercer número</label>
+            <input type="number" id="maxInput3" placeholder="ex:-5, 12, 40" required>
         </div>
         <button type="submit">Comparar</button>
         </form>
@@ -118,11 +118,13 @@
     <p id="resultEvenOrOdd"></p>
     <!-- Exercici 1.2.4 -->
 
+    <h2>Exercici 1.3: Callbacks</h2>
+
     <h3>Exercici 1.3.1</h3>
     <form id="formCallback">
         <label for="inputNumberCB">Introdueix un número</label>
         <input type="number" id="inputNumberCB" placeholder="ex: 5, -4, 25">
-        <button type="submit">Enviar</button>
+        <button type="submit">Veure</button>
     </form>
     <p id="resultCallback"></p>
     <!-- Exercici 1.3.1 -->
@@ -161,38 +163,82 @@
     <h3>Exercici 1.3.5</h3>
     <button type="button" id="buttonCB5">Enviar</button>
     <p id="resultCB5"></p>
-    <!-- Exercici 1.3.5-->
+    <!-- Exercici 1.3.5 -->
+
+    <h2>Exercici 1.4: Rest & Spread operators</h2>
 
     <h3>Exercici 1.4.1</h3>
     <button type="button" id="buttonSpreadOne">Provar</button>
     <p id="resultSpreadOne"></p>
-    <!-- Exercici 1.4.1-->
+    <!-- Exercici 1.4.1 -->
 
     <h3>Exercici 1.4.2</h3>
     <label for="inputRestNumber">Introdueix un número</label>
     <input type="number" id="inputRestNumber" placeholder="ex: -5, 12, 54">
     <button type="button" id="buttonRestOne">Sumar</button>
     <p id="resultRestOne"></p>
-    <!-- Exercici 1.4.2-->
+    <!-- Exercici 1.4.2 -->
 
     <h3>Exercici 1.4.3</h3>
     <button type="button" id="buttonSpreadThree">Comprovar</button>
     <p id="resultSpreadThree"></p>
-    <!-- Exercici 1.4.3-->
+    
+    <!-- Exercici 1.4.3 -->
 
     <h3>Exercici 1.4.4</h3>
     <button type="button" id="buttonRestFour">Comprovar</button>
-    <p id="resultRestFour"></p>
-    <!-- Exercici 1.4.4-->
+    <p>*El resultat s'imprimeix a la "consola"</p>
+    <!-- Exercici 1.4.4 -->
 
     <h3>Exercici 1.4.5</h3>
     <button type="button" id="buttonSpreadFive">Comprovar</button>
     <p id="resultSpreadFive"></p>
-    <!-- Exercici 1.4.5-->
+    <!-- Exercici 1.4.5 -->
 
     <h3>Exercici 1.4.6</h3>
     <button type="button" id="buttonSpreadSix">Comprovar</button>
-    <!-- Exercici 1.4.6-->
+    <p>*El resultat s'imprimeix a la "consola"</p>
+    <!-- Exercici 1.4.6 -->
+
+    <h2>Exercici 1.5: Array transformations</h2>
+
+    <h3>Exercici 1.5.1</h3>
+    <button type="button" id="buttonMap">Comprovar</button>
+    <p id="resultMap"></p>
+    <!-- Exercici 1.5.1 -->
+
+    <h3>Exercici 1.5.2</h3>
+    <button type="button" id="buttonFilter">Comprovar</button>
+    <p id="resultFilter"></p>
+    <!-- Exercici 1.5.2 -->
+
+    <h3>Exercici 1.5.3</h3>
+    <button type="button" id="buttonFind">Comprovar</button>
+    <p id="resultFind"></p>
+    <!-- Exercici 1.5.3 -->
+
+    <h3>Exercici 1.5.4</h3>
+    <button type="button" id="buttonReduce">Comprovar</button>
+    <p id="resultReduce"></p>
+    <!-- Exercici 1.5.4 -->
+
+    <h3>Exercici 1.5.5</h3>
+    <button type="button" id="buttonMulti">Comprovar</button>
+    <p id="resultMulti"></p>
+    <!-- Exercici 1.5.5 -->
+
+    <h3>Exercici 1.5.6</h3>
+    <button type="button" id="buttonEvery">Every</button>
+    <button type="button" id="buttonSome">Some</button>
+    <p id="resultEveryAndSome"></p> 
+    <!-- Exercici 1.5.6 -->
+
+    <h2>Exercici 1.6: Array loops</h2>
+
+    <h3>Exercici 1.6.1</h3>
+    <button type="button" id="buttonForEachName">Comprovar</button>
+    <p>*El resultat s'imprimeix a la "consola"</p>
+    <!-- Exercici 1.6.1 -->
 
 
 

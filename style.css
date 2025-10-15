@@ -15,7 +15,7 @@ html {
 
 body{
     margin: 0 auto;
-    padding: 0;
+    padding: 0 0 15rem 0;
     background-color: var(--color-background);
     width: 80%;
     font-size: 2rem

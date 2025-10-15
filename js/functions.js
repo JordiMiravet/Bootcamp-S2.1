@@ -229,3 +229,55 @@ const objecteFusio2 = {
 };
 
 export const objecteFusionat = { ...objecteFusio1, ...objecteFusio2 };
+
+// 1.5.1
+// Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.
+
+const mapArray = [1, 2, 3, 4]
+export const mapArraySquare = mapArray.map( (n) => n**2 );
+
+
+// 1.5.2
+// Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
+
+const filterArray = [1, 2, 3, 4];
+
+export const filterArrayEven = filterArray.filter( n => n % 2 === 0);
+
+// 1.5.3
+// Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.
+
+const findArray = [1, 10 , 8, 11];
+export const findArrayFirstNum = findArray.find( n => n > 10);
+
+// 1.5.4
+// Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular la suma total dels números.
+
+const reduceArray = [13, 7, 8, 21];
+export const reduceArraySuma = reduceArray.reduce((base, n) => base += n, 0);
+
+// 1.5.5
+//Donat un array "[ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]", crea una funció en una sola línia que faci el següent:
+    // - Filtra els nombres majors o iguals a 10.
+    // - Multiplica cada nombre filtrat per 2.
+    // - Calcula la suma dels nombres filtrats i multiplicats per 2.
+    // - La funció ha de retornar el resultat de la suma.
+
+const arrayMulti = [ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ];
+export const arrayMultiMake = arrayMulti.filter(n => n >= 10).map(n => n*2).reduce((base, n) => base + n, 0);
+
+// 1.5.6 
+// Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament
+
+const numberMoreThanTen = n => n > 10;
+const arrayEveryAndSome = [11, 12, 13, 14];
+
+export const arrayEvery = arrayEveryAndSome.every(numberMoreThanTen);
+export const arraySome = arrayEveryAndSome.some(numberMoreThanTen);
+
+// 1.6.1
+// forEach: Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];
+
+const arrayForEach = ['Anna', 'Bernat', 'Clara'];
+export function arrayForEachNames(){ arrayForEach.forEach( name => console.log(name)); } 
+
