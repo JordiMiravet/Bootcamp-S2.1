@@ -164,4 +164,68 @@ export function processarCadena(cadenaCaracters, callback){
     return callback(cadenaUpper);
 }
 
+// Exercici 1.4.1
+// Operador Spread en Arrays: Crea dues arrays, array1 i array2. 
+// Utilitza l'operador spread per a crear una tercera array que contingui tots els elements de array1 i array2.
 
+const arraySpreadOne = [1, 2, 3, 4, 5];
+const arraySpreadTwo = [6, 7, 8, 9, 10];
+export const sumArrays = [...arraySpreadOne, ...arraySpreadTwo]
+
+// Exercici 1.4.2
+// Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest 
+// per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
+
+export const sumarRest = (...rest) =>{
+    let suma = 0;
+    rest.forEach((n) => {
+        suma += n;
+    })
+    return suma;
+}
+
+// Exercici 1.4.3
+// Copiant objectes amb Spread: Crea un objecte 'objecte1'. 
+// Després crea un segon objecte, 'objecte2', que sigui una còpia de 'objecte1' utilitzant l'operador spread. 
+// Canvia una propietat de 'objecte2' i comprova que 'objecte1' no ha canviat.
+
+export const objecte1 = {
+    name: "Jordi",
+    mail: "jordimiravet.dev@gmail.com"
+}
+
+export const objecte2 = {...objecte1, name: "Marc", mail: "marcviaplana.dev@gmail.com"}
+
+ // 1.4.4 
+// Rest en Destructuring: Crea una array amb diversos elements. 
+// Utilitza destructuring i l'operador rest per a assignar els primers dos elements a variables, 
+// i després assignar la resta dels elements a una tercera variable.
+
+export const arrayRestTwo = [2, "pedra", null, true, "casa", 53]
+const [ element1, element2, ...resta ] = arrayRestTwo;
+
+// 1.4.5 
+// Spread en Funcions: Crea una funció que accepti tres arguments.
+// Després, crea una array amb tres elements i crida la funció utilitzant l'operador spread amb aquesta array.
+
+ const threeArguments = (a, b, ...c) => {
+    return [a , b , ...c];
+}
+
+const arrayThreeArguments = ["Pilota", false , 99 ];
+export const callResult = threeArguments(...arrayThreeArguments)
+
+// 1.4.6 
+// Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. 
+// Utilitza l'operador spread per a fusionar aquests dos objectes en un de nou.
+
+const objecteFusio1 = {
+    name: "Jordi",
+    lastName: "Miravet"
+};
+
+const objecteFusio2 = {
+    mail: "jordimiravet.dev@gmail.com"
+};
+
+export const objecteFusionat = { ...objecteFusio1, ...objecteFusio2 };

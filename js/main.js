@@ -1,7 +1,10 @@
 "use strict"
 
 import { messages, isEmpty, isNotNumber, isOutOfRange, print } from "./helpers.js";
-import { add, randomNumber, createPerson, returnNumbers, countDown, potConduir, compareNumbers, determineNumberType, trobarMaxim, parOImpar, processar, calculadoraCB, esperarISaludar, processarElements, processarCadena } from "./functions.js"
+import { add, randomNumber, createPerson, returnNumbers, countDown,
+     potConduir, compareNumbers, determineNumberType, trobarMaxim, parOImpar,
+     processar, calculadoraCB, esperarISaludar, processarElements, processarCadena, 
+     sumArrays, sumarRest, objecte1, objecte2, arrayRestTwo, callResult, objecteFusionat } from "./functions.js"
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -367,6 +370,89 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, textCadena);
     });
 
+    // Exercici 1.4.1
+    // Operador Spread en Arrays: Crea dues arrays, array1 i array2. 
+    // Utilitza l'operador spread per a crear una tercera array que contingui tots els elements de array1 i array2.
+
+    const buttonSpreadOne = document.getElementById("buttonSpreadOne");
+    buttonSpreadOne.addEventListener("click", () => {
+        const result = document.getElementById("resultSpreadOne");
+        
+        print(result, `L'Spread emprat es veuria aixi : ${sumArrays.join(", ")}`);
+    });
+
+    // Exercici 1.4.2
+    // Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest 
+    // per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
+
+    const arrayNumbersRest = [];
+
+    const buttonRestOne = document.getElementById("buttonRestOne");
+    buttonRestOne.addEventListener("click", () => {
+
+        const number = parseInt(document.getElementById("inputRestNumber").value);
+        const result = document.getElementById("resultRestOne");
+
+        if(isEmpty(number) || isNotNumber(number)){
+            print(result, messages.isNotNumber);
+        } else {
+            arrayNumbersRest.push(number)
+            print(result, sumarRest(...arrayNumbersRest));
+        }  
+    })
+
+    // Exercici 1.4.3
+    // Copiant objectes amb Spread: Crea un objecte 'objecte1'. 
+    // Després crea un segon objecte, 'objecte2', que sigui una còpia de 'objecte1' utilitzant l'operador spread. 
+    // Canvia una propietat de 'objecte2' i comprova que 'objecte1' no ha canviat.
+
+    const buttonSpreadThree = document.getElementById("buttonSpreadThree");
+    buttonSpreadThree.addEventListener("click", () => {
+        const result = document.getElementById("resultSpreadThree");
+
+        print(result, `Primer Objecte : ${objecte1.name} ${objecte1.mail}
+            Segon Objecte : ${objecte2.name} ${objecte2.mail} (copiat i modificat)`)
+    })
+
+    // 1.4.4 
+    // Rest en Destructuring: Crea una array amb diversos elements. 
+    // Utilitza destructuring i l'operador rest per a assignar els primers dos elements a variables, 
+    // i després assignar la resta dels elements a una tercera variable.
+
+    const buttonRestFour = document.getElementById("buttonRestFour");
+    buttonRestFour.addEventListener("click", () => {
+        
+        const [ element1, element2, ...resta ] = arrayRestTwo;
+
+        console.log(arrayRestTwo);
+        console.log(element1);
+        console.log(element2);
+        console.log(...resta);
+
+    });
+
+    // 1.4.5 
+    // Spread en Funcions: Crea una funció que accepti tres arguments.
+    // Després, crea una array amb tres elements i crida la funció utilitzant l'operador spread amb aquesta array.
+
+    const buttonSpreadFive = document.getElementById("buttonSpreadFive");
+    buttonSpreadFive.addEventListener("click", () => {
+        const result = document.getElementById("resultSpreadFive");
+    
+        print(result, callResult.join(" / "))
+    });
+
+    // 1.4.6 
+    // Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. 
+    // Utilitza l'operador spread per a fusionar aquests dos objectes en un de nou.
+
+    const buttonSpreadSix = document.getElementById("buttonSpreadSix");
+    buttonSpreadSix.addEventListener("click", () => {
+        console.log(objecteFusionat)
+
+    });
+
+    
 
 
 
