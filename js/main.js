@@ -6,7 +6,7 @@ import { add, randomNumber, createPerson, returnNumbers, countDown,
     processar, calculadoraCB, esperarISaludar, processarElements, processarCadena, 
     sumArrays, sumarRest, objecte1, objecte2, arrayRestTwo, callResult, objecteFusionat,
     mapArraySquare, filterArrayEven, findArrayFirstNum, reduceArraySuma, arrayMultiMake, arrayEvery, arraySome, 
-    arrayForEachNames } from "./functions.js"
+    arrayForEachNames, arrayForOf, newArrayFilter, forInKeyValue, numerosBreak, forOfIndex } from "./functions.js"
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -528,17 +528,75 @@ document.addEventListener("DOMContentLoaded", () => {
         const { result } = getInputsEveryAndSome();
 
         print(result, arraySome ? "Si, algun/s número es major que 10" : "no, cap número es major que 10")
-
     });
 
     // 1.6.1
-    // forEach: Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];
+    // forEach: Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: 
+    // let noms = ['Anna', 'Bernat', 'Clara'];
 
     const buttonForEachName = document.getElementById("buttonForEachName");
     buttonForEachName.addEventListener("click", () => {
         arrayForEachNames()
     })
 
+    // 1.6.2
+    // for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: 
+    // let noms = ['Anna', 'Bernat', 'Clara'];
+
+    const buttonForOfName = document.getElementById("buttonForOfName");
+    buttonForOfName.addEventListener("click", () => {
+        arrayForOf();
+    })
+    
+    // 1.6.3
+    // filter: Teniu una array de números. Utilitza filter per a crear una nova array que només contingui els números parells. 
+    // let numeros = [1, 2, 3, 4, 5, 6];
+
+    const buttonFilterArray = document.getElementById("buttonFilterArray") ;
+    buttonFilterArray.addEventListener("click", () => {
+        const result = document.getElementById("resultFilterArray");
+        print(result, newArrayFilter.join(" / "))
+    });
+
+    // 1.6.4
+    // for-in: Teniu un objecte amb parells clau-valor: let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' }; 
+    // Utilitza un bucle for-in per a imprimir a la consola cada clau i el seu valor corresponent.
+
+    const buttonForInKeyValue = document.getElementById("buttonForInKeyValue");
+    buttonForInKeyValue.addEventListener("click", () => {
+        console.clear();
+        forInKeyValue();
+    })
+
+    // 1.6.5
+    // for-of amb break: Teniu una array de números. Utilitza un bucle for-of per a imprimir a la consola els números fins a trobar el número 5,
+    // llavors atura el bucle: let numeros = [1, 2, 3, 4, 5, 6];
+    
+    const buttonNumbersBreak = document.getElementById("buttonNumbersBreak");
+    buttonNumbersBreak.addEventListener("click", () => {
+        console.clear();
+        numerosBreak();
+    });
+
+    // 1.6.6
+    // for-of amb index: Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index): 
+    // let noms = ['Anna', 'Bernat', 'Clara']
+
+    const buttonForOfIndex = document.getElementById("buttonForOfIndex");
+    buttonForOfIndex.addEventListener("click", () => {
+        console.clear();
+        forOfIndex();
+    });
+
+    
+    
+
+
+    
+    
+    
+
+    
 
 
      

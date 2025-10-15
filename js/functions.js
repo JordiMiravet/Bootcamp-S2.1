@@ -279,5 +279,63 @@ export const arraySome = arrayEveryAndSome.some(numberMoreThanTen);
 // forEach: Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];
 
 const arrayForEach = ['Anna', 'Bernat', 'Clara'];
+
+// const arrayForEachNames = arrayForEach.forEach( name => console.log(name))
 export function arrayForEachNames(){ arrayForEach.forEach( name => console.log(name)); } 
 
+// 1.6.2
+// for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];
+
+const arrayForOfNames = ['Anna', 'Bernat', 'Clara'];
+
+export function arrayForOf(){
+    for( const name of arrayForOfNames){
+        console.log(name)
+    }
+}
+
+// 1.6.3
+// filter: Teniu una array de números. Utilitza filter per a crear una nova array que només contingui els números parells. 
+// let numeros = [1, 2, 3, 4, 5, 6];
+
+const arrayFilter = [1, 2, 3, 4, 5, 6];
+export const newArrayFilter = arrayFilter.filter(n => n % 2 === 0)
+
+// 1.6.4
+// for-in: Teniu un objecte amb parells clau-valor: let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' }; 
+// Utilitza un bucle for-in per a imprimir a la consola cada clau i el seu valor corresponent.
+
+let obj = { nom: "Ona", edat: 25, ciutat: 'Barcelona' };
+
+export const forInKeyValue = () => {
+    for( const key in obj){
+        console.log(key, ":", obj[key])
+    }
+}
+
+// 1.6.5
+// for-of amb break: Teniu una array de números. Utilitza un bucle for-of per a imprimir a la consola els números fins a trobar el número 5,
+// llavors atura el bucle: let numeros = [1, 2, 3, 4, 5, 6];
+
+let numeros = [1, 2, 3, 4, 5, 6]
+
+export const numerosBreak = () => {
+    let newNumeros = [];
+    for(const numero of numeros){
+        newNumeros.push(numero);
+        if(numero === 5) break;
+    }
+    console.log(newNumeros)
+}
+
+// 1.6.6
+// for-of amb index: Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index): 
+// let noms = ['Anna', 'Bernat', 'Clara']
+
+let noms = ['Anna', 'Bernat', 'Clara']
+
+export const forOfIndex = () => {
+    for(const [i, nom] of noms.entries()){
+        console.log(nom , i);
+    }
+}
