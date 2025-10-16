@@ -8,267 +8,428 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body >
+    <h1>Sprint 2.1</h1>
     <h2>Exercici 1.1: Arrow functions</h2>
-    
-    <form id="formSuma">
+
+    <section>
         <h3>Exercici 1.1.1</h3>
-        <div>
-             <label for="number1">Introdueix un primer número</label>
-            <input type="number" id="number1" placeholder="ex: 3, 5, 10" required>
-        </div>
-        <div>
-            <label for="number2">Introdueix un segon número</label>
-            <input type="number" id="number2" placeholder="ex: 3, 5, 10" required>
-        </div>
-        <button type="submit">Sumar</button>
-    </form>
-    <p id="resultSuma"></p> 
+        <h4>Conversió de funcions: Tens una funció add que accepta dos paràmetres i retorna la seva suma. Converteix-la en una funció de fletxa. Per exemple: function add(a, b) {return a + b;}.</h4>
+        <form id="formSuma">
+            <div class="form-group">
+                <label for="number1">Introdueix un primer número</label>
+                <input type="number" id="number1" placeholder="ex: 3, 5, 10" required>
+            </div>
+            <div class="form-group">
+                <label for="number2">Introdueix un segon número</label>
+                <input type="number" id="number2" placeholder="ex: 3, 5, 10" required>
+            </div>
+            <button type="submit">Sumar</button>
+        </form>
+        <p id="resultSuma" class="result"></p> 
+    </section>
     <!-- Exercici 1.1.1 -->
 
-    <h3>Exercici 1.1.2</h3>
-    <button type="button" id="buttonRandom">Comprovar</button>
-    <p id="result12"></p>
+    <section>
+        <h3>Exercici 1.1.2</h3>
+        <h4>Funció de fletxa sense paràmetres: Crea una funció de fletxa anomenada randomNumber que no necessiti paràmetres i que retorni un número aleatori entre 0 i 100.</h4>
+        <button type="button" id="buttonRandom">Comprovar</button>
+        <p id="result12" class="result"></p>
+    </section>
     <!-- Exercici 1.1.2 -->
 
-    <form id="form3">
+    <section>
         <h3>Exercici 1.1.3</h3>
-        <div>
-            <label for="inputName">Introdueix un nom</label>
-            <input type="text" id="inputName" placeholder="ex: Joan, Pere, Francesc" required>
-        </div>
-        
-        <button type="submit">Enviar Salutacio</button>
-    </form>
-    <p id="resultPerson"></p>
+        <h4>Ús de 'this' en les funcions de fletxa: Crea una classe person que tingui una propietat name i una funció greet que utilitzi una funció de fletxa. La funció ha d'imprimir una salutació que inclogui el nom de la persona. Per exemple: console.log(Hola, ${this.name});.</h4>
+        <form id="form3">
+            <div class="form-group">
+                <label for="inputName">Introdueix un nom</label>
+                <input type="text" id="inputName" placeholder="ex: Joan, Pere, Francesc" required>
+            </div>
+            <button type="submit">Enviar Salutacio</button>
+        </form>
+        <p id="resultPerson" class="result"></p>
+    </section>
     <!-- Exercici 1.1.3 -->
 
-    <h3>Exercici 1.1.4</h3>
-    <button type="button" id="arrayButton">Enviar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.1.4</h3>
+        <h4>Funció de fletxa dins d'un loop: Crea una funció anomenada printNumbers que accepti un array de números i utilitzi un loop for per imprimir cada número a la consola utilitzant una funció de fletxa.</h4>
+        <button type="button" id="arrayButton">Enviar</button>
+        <p class="console-notice">*El resultat s'imprimeix a la consola</p>
+    </section>
     <!-- Exercici 1.1.4 -->
 
-    <h3>Exercici 1.1.5</h3>
-    <button type="button" id="setTimeOutButton">Enviar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.1.5</h3>
+        <h4>Funció de fletxa amb 'setTimeout': Crea una funció de fletxa que imprimeixi un missatge a la consola després d'esperar 3 segons.</h4>
+        <button type="button" id="setTimeOutButton">Enviar</button>
+        <p class="console-notice">*El resultat s'imprimeix amb delay a la consola</p>
+    </section>   
     <!-- Exercici 1.1.5 -->
 
     <h2>Exercici 1.2: Operador ternari</h2>
-    <form id="form4">
+
+    <section>
         <h3>Exercici 1.2.1</h3>
-        <div>
-            <label for="inputAge">Introdueix la teva edat</label>
-            <input type="number" id="inputAge" placeholder="ex: 41, 17, 33" min="-1" max="120" required>
-        </div>
-        <button type="submit">Comprovar</button>
-    </form>
-    <p id="resultAge"></p>
+        <h4>Operador ternari bàsic: Escriu una funció potConduir que accepti l'edat com a paràmetre i utilitzi l'operador ternari per determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de retornar 'Pots conduir'. Si no, ha de retornar 'No pots conduir'.</h4>
+        <form id="form4">  
+            <div class="form-group">
+                <label for="inputAge">Introdueix la teva edat</label>
+                <input type="number" id="inputAge" placeholder="ex: 41, 17, 33" min="-1" max="120" required>
+            </div>
+            <button type="submit">Comprovar</button>
+        </form>
+        <p id="resultAge" class="result"></p>
+    </section>  
     <!-- Exercici 1.2.1 -->
 
-    
-    <form id="formCompare">
+    <section>
         <h3>Exercici 1.2.2</h3>
-        <div>
-            <label for="compareInput1">Introdueix el primer número</label>
-            <input type="number" id="compareInput1" placeholder="ex: 3, 15, -5" required>
-        </div>
-        <div>
-            <label for="compareInput2">Introdueix el primer número</label>
-            <input type="number" id="compareInput2" placeholder="ex: -9, 29, 55" required>
-        </div>
-        <button type="submit">Comparar</button>
-    </form>
-    <p id="resultCompare"></p>
+        <h4>Ús amb operadors de comparació: Escriu una expressió que utilitzi l'operador ternari per determinar quin dels dos nombres donats (num1 i num2) és més gran. Si num1 és més gran, retorna 'num1 és més gran'. Si no, retorna 'num2 és més gran'.</h4>
+        <form id="formCompare">       
+            <div class="form-group">
+                <label for="compareInput1">Introdueix el primer número</label>
+                <input type="number" id="compareInput1" placeholder="ex: 3, 15, -5" required>
+            </div>
+            <div class="form-group">
+                <label for="compareInput2">Introdueix el primer número</label>
+                <input type="number" id="compareInput2" placeholder="ex: -9, 29, 55" required>
+            </div>
+            <button type="submit">Comparar</button>
+        </form>
+        <p id="resultCompare" class="result"></p>
+    </section>
     <!-- Exercici 1.2.2 -->
 
-    <form id="formTypeNumber">
+    <section>
         <h3>Exercici 1.2.3 -> a</h3>
-        <div>
-            <label for="inputTypeNumber">Introdueix un número</label>
-            <input type="number" id="inputTypeNumber" placeholder="ex:-5, 12, 40" required>
-        </div>
-        <button type="submit">Enviar</button>
-    </form>
-    <p id="resultTypeNumber"></p>
-
-    <form id="formMax">
-        <h3>Exercici 1.2.3 -> b</h3>
-        <div>
-            <label for="maxInput1">Introdueix el primer número</label>
-            <input type="number" id="maxInput1" placeholder="ex:-5, 12, 40" required>
-        </div>
-        <div>
-            <label for="maxInput2">Introdueix el segon número</label>
-            <input type="number" id="maxInput2" placeholder="ex:-5, 12, 40" required>
-        </div>
-        <div>
-            <label for="maxInput3">Introdueix el tercer número</label>
-            <input type="number" id="maxInput3" placeholder="ex:-5, 12, 40" required>
-        </div>
-        <button type="submit">Comparar</button>
+        <h4>Ús enllaçat d'operadors ternaris: Escriu una expressió que utilitzi enllaços d'operadors ternaris per determinar si un número és positiu, negatiu o zero.</h4>
+        <form id="formTypeNumber">            
+            <div class="form-group">
+                <label for="inputTypeNumber">Introdueix un número</label>
+                <input type="number" id="inputTypeNumber" placeholder="ex:-5, 12, 40" required>
+            </div>
+            <button type="submit">Enviar</button>
         </form>
-    <p id="resultMax"></p>
+        <p id="resultTypeNumber" class="result"></p>
+    </section>
+    
+    <section>
+        <h3>Exercici 1.2.3 -> b</h3>
+        <h4>Operador ternari amb funcions: Crea una funció trobarMaxim que accepti tres paràmetres (a, b, c) i utilitzi l'operador ternari per determinar el valor màxim.</h4>
+        <form id="formMax">
+            <div class="form-group">
+                <label for="maxInput1">Introdueix el primer número</label>
+                <input type="number" id="maxInput1" placeholder="ex:-5, 12, 40" required>
+            </div>
+            <div class="form-group">
+                <label for="maxInput2">Introdueix el segon número</label>
+                <input type="number" id="maxInput2" placeholder="ex:-5, 12, 40" required>
+            </div>
+            <div class="form-group">
+                <label for="maxInput3">Introdueix el tercer número</label>
+                <input type="number" id="maxInput3" placeholder="ex:-5, 12, 40" required>
+            </div>
+            <button type="submit">Comparar</button>
+            </form>
+        <p id="resultMax" class="result"></p>
+    </section>  
     <!-- Exercici 1.2.3 -->
 
-    <h3>Exercici 1.2.4</h3>
-    <label for="inputNumberArray">Introdueix un número</label>
-    <input type="number" id="inputNumberArray" placeholder="ex: 5, 25, 33">
-    
-    <button type="button" id="buttonAddNumbers">Afegir número</button>
-    <button type="button" id="buttonEvenOrOdd">Enviar</button>
-    <p id="resultEvenOrOdd"></p>
+    <section>
+        <h3>Exercici 1.2.4</h3>
+        <h4>Operador ternari dins un bucle: Escriu una funció parOImpar que accepti un array de números i utilitzi un bucle per a recórrer l'array. Dins del bucle, utilitza l'operador ternari per a determinar si cada número és parell o imparell.</h4>
+        <div class="form-group">
+            <label for="inputNumberArray">Introdueix un número</label>
+            <input type="number" id="inputNumberArray" placeholder="ex: 5, 25, 33">
+        </div>
+        <div class="section__butons">
+            <button type="button" id="buttonAddNumbers">Afegir número</button>
+            <button type="button" id="buttonEvenOrOdd">Enviar</button>
+        </div>
+        <p id="resultEvenOrOdd" class="result"></p>
+    </section>  
     <!-- Exercici 1.2.4 -->
 
     <h2>Exercici 1.3: Callbacks</h2>
-
-    <h3>Exercici 1.3.1</h3>
-    <form id="formCallback">
-        <label for="inputNumberCB">Introdueix un número</label>
-        <input type="number" id="inputNumberCB" placeholder="ex: 5, -4, 25">
-        <button type="submit">Veure</button>
-    </form>
-    <p id="resultCallback"></p>
+    <section>
+        <h3>Exercici 1.3.1</h3>
+        <h4>Callback bàsic: Escriu una funció anomenada processar que accepti dos paràmetres: un nombre i una funció de callback. La funció processar ha d'invocar la funció de callback, passant el nombre com a paràmetre.</h4>
+        <form id="formCallback">
+            <div class="form-group">
+                <label for="inputNumberCB">Introdueix un número</label>
+                <input type="number" id="inputNumberCB" placeholder="ex: 5, -4, 25">
+            </div>
+            
+            <button type="submit">Veure</button>
+        </form>
+        <p id="resultCallback" class="result"></p>
+    </section>  
     <!-- Exercici 1.3.1 -->
 
-    <h3>Exercici 1.3.2</h3>
-    <form id="formCallback2">
-        <div>
-            <label for="inputB2NumberOne">Introdueix un número</label>
-            <input type="number" id="inputB2NumberOne" placeholder="ex: 5, -4, 25">
-        </div>
-        <div>
-            <label for="inputB2NumberTwo">Introdueix un número</label>
-            <input type="number" id="inputB2NumberTwo" placeholder="ex: 5, -4, 25">
-        </div>
-        <button type="submit">Enviar</button>
-    </form>
-    <p id="resultCallback2"></p>
+    <section>
+        <h3>Exercici 1.3.2</h3>
+        <h4>Callbacks amb operacions matemàtiques: Escriu una funció calculadora que accepti tres paràmetres: dos nombres i una funció de callback. La funció calculadora ha d'invocar la funció de callback amb els dos nombres com a paràmetres. Després, crida calculadora amb una funció que faci la suma dels dos nombres.</h4>
+        <form id="formCallback2">
+            <div class="form-group">
+                <label for="inputB2NumberOne">Introdueix un número</label>
+                <input type="number" id="inputB2NumberOne" placeholder="ex: 5, -4, 25">
+            </div>
+            <div class="form-group">
+                <label for="inputB2NumberTwo">Introdueix un número</label>
+                <input type="number" id="inputB2NumberTwo" placeholder="ex: 5, -4, 25">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="resultCallback2" class="result"></p>
+    </section>
     <!-- Exercici 1.3.2 -->
 
-    <h3>Exercici 1.3.3</h3>
-    <form id="formCallback3">
-        <div>
-            <label for="inputB3name">Introdueix un nom</label>
-            <input type="text" id="inputB3name" placeholder="ex: Maria, Pere, Pau" required>
-        </div>
-        <button type="submit">Enviar</button>
-    </form>
-    <p id="resultCallback3"></p>
+    <section>
+        <h3>Exercici 1.3.3</h3>
+        <h4>Ús de callbacks en funcions asíncrones: Escriu una funció esperarISaludar que accepti dos paràmetres: un nom i una funció de callback. La funció ha d'esperar 2 segons i llavors invocar la funció de callback, passant el nom com a paràmetre.</h4>
+        <form id="formCallback3">
+            <div class="form-group">
+                <label for="inputB3name">Introdueix un nom</label>
+                <input type="text" id="inputB3name" placeholder="ex: Maria, Pere, Pau" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="resultCallback3" class="result"></p>
+    </section> 
     <!-- Exercici 1.3.3 -->
 
-    <h3>Exercici 1.3.4</h3>
-    <button type="button" id="buttonCB4">Enviar</button>
-    <p id="resultCB4"></p>
+    <section>
+        <h3>Exercici 1.3.4</h3>
+        <h4>Callbacks amb arrays: Escriu una funció processarElements que accepti dos paràmetres: un array i una funció de callback. La funció processarElements ha d'invocar la funció de callback per cada element de l'array.</h4>
+        <button type="button" id="buttonCB4">Enviar</button>
+        <p id="resultCB4" class="result"></p>
+    </section> 
     <!-- Exercici 1.3.4 -->
 
-    <h3>Exercici 1.3.5</h3>
-    <button type="button" id="buttonCB5">Enviar</button>
-    <p id="resultCB5"></p>
+    <section>
+        <h3>Exercici 1.3.5</h3>
+        <h4>Escriu una funció processarCadena que accepti dos paràmetres: una cadena de caràcters i una funció de callback. La funció processarCadena ha de convertir la cadena a majúscules i llavors invocar la funció de callback amb la cadena transformada.</h4>
+        <button type="button" id="buttonCB5">Enviar</button>
+        <p id="resultCB5" class="result"></p>
+    </section> 
     <!-- Exercici 1.3.5 -->
 
     <h2>Exercici 1.4: Rest & Spread operators</h2>
 
-    <h3>Exercici 1.4.1</h3>
-    <button type="button" id="buttonSpreadOne">Provar</button>
-    <p id="resultSpreadOne"></p>
+    <section>
+        <h3>Exercici 1.4.1</h3>
+        <h4>Operador Spread en Arrays: Crea dues arrays, array1 i array2. Utilitza l'operador spread per a crear una tercera array que contingui tots els elements de array1 i array2.</h4>
+        <button type="button" id="buttonSpreadOne">Provar</button>
+        <p id="resultSpreadOne" class="result"></p>
+    </section> 
     <!-- Exercici 1.4.1 -->
 
-    <h3>Exercici 1.4.2</h3>
-    <label for="inputRestNumber">Introdueix un número</label>
-    <input type="number" id="inputRestNumber" placeholder="ex: -5, 12, 54">
-    <button type="button" id="buttonRestOne">Sumar</button>
-    <p id="resultRestOne"></p>
+    <section>
+        <h3>Exercici 1.4.2</h3>
+        <h4>Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.</h4>
+        <div class="form-group">
+            <label for="inputRestNumber">Introdueix un número</label>
+            <input type="number" id="inputRestNumber" placeholder="ex: -5, 12, 54">
+        </div>
+        <button type="button" id="buttonRestOne">Sumar</button>
+        <p id="resultRestOne" class="result"></p>
+    </section>   
     <!-- Exercici 1.4.2 -->
 
-    <h3>Exercici 1.4.3</h3>
-    <button type="button" id="buttonSpreadThree">Comprovar</button>
-    <p id="resultSpreadThree"></p>
-    
+    <section>
+        <h3>Exercici 1.4.3</h3>
+        <h4>Copiant objectes amb Spread: Crea un objecte 'objecte1'. Després crea un segon objecte, 'objecte2', que sigui una còpia de 'objecte1' utilitzant l'operador spread. Canvia una propietat de 'objecte2' i comprova que 'objecte1' no ha canviat.</h4>
+        <button type="button" id="buttonSpreadThree">Comprovar</button>
+        <p id="resultSpreadThree" class="result"></p>
+    </section> 
     <!-- Exercici 1.4.3 -->
 
-    <h3>Exercici 1.4.4</h3>
-    <button type="button" id="buttonRestFour">Comprovar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.4.4</h3>
+        <h4>Rest en Destructuring: Crea una array amb diversos elements. Utilitza destructuring i l'operador rest per a assignar els primers dos elements a variables, i després assignar la resta dels elements a una tercera variable.</h4>
+        <button type="button" id="buttonRestFour">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix a la consola</p>
+    </section>   
     <!-- Exercici 1.4.4 -->
 
-    <h3>Exercici 1.4.5</h3>
-    <button type="button" id="buttonSpreadFive">Comprovar</button>
-    <p id="resultSpreadFive"></p>
+    <section>
+        <h3>Exercici 1.4.5</h3>
+        <h4>Spread en Funcions: Crea una funció que accepti tres arguments. Després, crea una array amb tres elements i crida la funció utilitzant l'operador spread amb aquesta array.</h4>
+        <button type="button" id="buttonSpreadFive">Comprovar</button>
+        <p id="resultSpreadFive" class="result"></p>
+    </section>   
     <!-- Exercici 1.4.5 -->
 
-    <h3>Exercici 1.4.6</h3>
-    <button type="button" id="buttonSpreadSix">Comprovar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.4.6</h3>
+        <h4>Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. Utilitza l'operador spread per a fusionar aquests dos objectes en un de nou.</h4>
+        <button type="button" id="buttonSpreadSix">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix a la consola</p>
+    </section>   
     <!-- Exercici 1.4.6 -->
 
     <h2>Exercici 1.5: Array transformations</h2>
 
-    <h3>Exercici 1.5.1</h3>
-    <button type="button" id="buttonMap">Comprovar</button>
-    <p id="resultMap"></p>
+    <section>
+        <h3>Exercici 1.5.1</h3>
+        <h4>Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.</h4>
+        <button type="button" id="buttonMap">Comprovar</button>
+        <p id="resultMap" class="result"></p>
+    </section>  
     <!-- Exercici 1.5.1 -->
 
-    <h3>Exercici 1.5.2</h3>
-    <button type="button" id="buttonFilter">Comprovar</button>
-    <p id="resultFilter"></p>
+    <section>
+        <h3>Exercici 1.5.2</h3>
+        <h4>Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.</h4>
+        <button type="button" id="buttonFilter">Comprovar</button>
+        <p id="resultFilter" class="result"></p>
+    </section>   
     <!-- Exercici 1.5.2 -->
 
-    <h3>Exercici 1.5.3</h3>
-    <button type="button" id="buttonFind">Comprovar</button>
-    <p id="resultFind"></p>
+    <section>
+        <h3>Exercici 1.5.3</h3>
+        <h4>Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.</h4>
+        <button type="button" id="buttonFind">Comprovar</button>
+        <p id="resultFind" class="result"></p>
+    </section>   
     <!-- Exercici 1.5.3 -->
 
-    <h3>Exercici 1.5.4</h3>
-    <button type="button" id="buttonReduce">Comprovar</button>
-    <p id="resultReduce"></p>
+    <section>
+        <h3>Exercici 1.5.4</h3>
+        <h4>Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular la suma total dels números.</h4>
+        <button type="button" id="buttonReduce">Comprovar</button>
+        <p id="resultReduce" class="result"></p>
+    </section>   
     <!-- Exercici 1.5.4 -->
 
-    <h3>Exercici 1.5.5</h3>
-    <button type="button" id="buttonMulti">Comprovar</button>
-    <p id="resultMulti"></p>
+    <section>
+        <h3>Exercici 1.5.5</h3>
+        <h4>Donat un array "[ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]", crea una funció en una sola línia que faci el següent:<br><br>
+        - Filtra els nombres majors o iguals a 10.<br>
+        - Multiplica cada nombre filtrat per 2.<br>
+        - Calcula la suma dels nombres filtrats i multiplicats per 2.<br>
+        - La funció ha de retornar el resultat de la suma.</h4>
+        <button type="button" id="buttonMulti">Comprovar</button>
+        <p id="resultMulti" class="result"></p>
+    </section>   
     <!-- Exercici 1.5.5 -->
 
-    <h3>Exercici 1.5.6</h3>
-    <button type="button" id="buttonEvery">Every</button>
-    <button type="button" id="buttonSome">Some</button>
-    <p id="resultEveryAndSome"></p> 
+    <section>
+        <h3>Exercici 1.5.6</h3>
+        <h4>Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament</h4>
+        <div class="section__butons">
+            <button type="button" id="buttonEvery">Every</button>
+            <button type="button" id="buttonSome">Some</button>
+        </div>
+        <p id="resultEveryAndSome" class="result"></p> 
+    </section>   
     <!-- Exercici 1.5.6 -->
 
     <h2>Exercici 1.6: Array loops</h2>
 
-    <h3>Exercici 1.6.1</h3>
-    <button type="button" id="buttonForEachName">Comprovar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.6.1</h3>
+        <h4>forEach: Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: <br>let noms = ['Anna', 'Bernat', 'Clara'];</h4>
+        <button type="button" id="buttonForEachName">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix a la consola</p>
+    </section>   
     <!-- Exercici 1.6.1 -->
 
-    <h3>Exercici 1.6.2</h3>
-    <button type="button" id="buttonForOfName">Comprovar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.6.2</h3>
+        <h4>for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: <br>let noms = ['Anna', 'Bernat', 'Clara'];</h4>
+        <button type="button" id="buttonForOfName">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix a la consola</p>
+    </section>   
     <!-- Exercici 1.6.2 -->
 
-    <h3>Exercici 1.6.3</h3>
-    <button type="button" id="buttonFilterArray">Comprovar</button>
-    <P id="resultFilterArray"></P>
+    <section>
+        <h3>Exercici 1.6.3</h3>
+        <h4>filter: Teniu una array de números. Utilitza filter per a crear una nova array que només contingui els números parells. <br>let numeros = [1, 2, 3, 4, 5, 6];</h4>
+        <button type="button" id="buttonFilterArray">Comprovar</button>
+        <P id="resultFilterArray" class="result"></P>
+    </section>   
     <!-- Exercici 1.6.3 -->
 
-    <h3>Exercici 1.6.4</h3>
-    <button type="button" id="buttonForInKeyValue">Comprovar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.6.4</h3>
+        <h4>for-in: Teniu un objecte amb parells clau-valor: <br> let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' };<br> Utilitza un bucle for-in per a imprimir a la consola cada clau i el seu valor corresponent.</h4>
+        <button type="button" id="buttonForInKeyValue">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix a la consola</p>
+    </section>   
     <!-- Exercici 1.6.4 -->
 
-    <h3>Exercici 1.6.5</h3>
-    <button type="button" id="buttonNumbersBreak">Comprovar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.6.5</h3>
+        <h4>for-of amb break: Teniu una array de números. Utilitza un bucle for-of per a imprimir a la consola els números fins a trobar el número 5, llavors atura el bucle: <br>let numeros = [1, 2, 3, 4, 5, 6];</h4>
+        <button type="button" id="buttonNumbersBreak">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix a la consola</p>
+    </section>   
     <!-- Exercici 1.6.5 -->
 
-    <h3>Exercici 1.6.6</h3>
-    <button type="button" id="buttonForOfIndex">Comprovar</button>
-    <p>*El resultat s'imprimeix a la "consola"</p>
+    <section>
+        <h3>Exercici 1.6.6</h3>
+        <h4>for-of amb index: Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index): <br>let noms = ['Anna', 'Bernat', 'Clara']</h4>
+        <button type="button" id="buttonForOfIndex">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix a la consola</p>
+    </section>  
     <!-- Exercici 1.6.6 -->
 
+    <h2>Exercici 1.7: Promises & Async/Await</h2>
 
+    <section>
+        <h3>Exercici 1.7.1</h3>
+        <h4>Creació d'una Promesa: Crea una promesa que es resolgui després de 2 segons i que retorni la cadena de text 'Hola, món'.</h4>
+        <button type="button" id="buttonPromise">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix amb delay a la consola</p>
+    </section>  
+    <!-- Exercici 1.7.1 -->
 
+    <section>
+        <h3>Exercici 1.7.2</h3>
+        <h4>Utilització d'una Promesa: Utilitza la promesa creada en l'exercici anterior. Crea un .then que imprimeixi el resultat a la consola.</h4>
+        <button type="button" id="buttonPromiseThen">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix amb delay a la consola</p>
+    </section>  
+    <!-- Exercici 1.7.2 -->
 
-    
+    <section>
+        <h3>Exercici 1.7.3</h3>
+        <h4>Promesa amb reject: Crea una promesa que es resolgui després de 2 segons si l'input és igual a 'Hola', i que la rebutgi si l'input és qualsevol altra cosa.</h4>
+        <div class="form-group">
+             <label for="inputPromiseReject">Introdueix un text</label>
+            <input type="text" id="inputPromiseReject" placeholder="ex: Hola, Adeu">
+        </div>
+        <button type="button" id="buttonPromiseReject">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix amb delay a la consola</p>
+    </section>  
+    <!-- Exercici 1.7.3 -->
+
+    <section>
+        <h3>Exercici 1.7.4</h3>
+        <h4>Ús de async/await: Escriu una funció asíncrona que utilitzi la funció await per a esperar el resultat de la promesa creada a l'exercici 1, i que després imprimeixi aquest resultat a la consola.</h4>
+        <button type="button" id="buttonAsyncAwait">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix amb delay a la consola</p>
+    </section> 
+    <!-- Exercici 1.7.4 -->
+
+    <section>
+        <h3>Exercici 1.7.5</h3>
+        <h4>Gestió d'errors amb async/await: Modifica la funció de l'exercici 4 per a que capturi qualsevol possible error utilitzant un bloc try/catch.</h4>
+        <button type="button" id="buttonTryCatch">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix amb delay a la consola</p>
+    </section>
+    <!-- Exercici 1.7.5 -->
+
+    <section>
+        <h3>Exercici 1.7.6</h3>
+        <h4>Promise.all: Crea dues promeses que es resolguin després de 2 i 3 segons, respectivament. Utilitza Promise.all per a esperar que ambdues promeses es resolguin, i imprimeix els resultats a la consola.</h4>
+        <button type="button" id="buttonPromiseAll">Comprovar</button>
+        <p class="console-notice">*El resultat s'imprimeix amb delay a la consola</p>
+    </section>
+    <!-- Exercici 1.7.6 -->
+
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

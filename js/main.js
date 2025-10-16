@@ -6,14 +6,16 @@ import { add, randomNumber, createPerson, returnNumbers, countDown,
     processar, calculadoraCB, esperarISaludar, processarElements, processarCadena, 
     sumArrays, sumarRest, objecte1, objecte2, arrayRestTwo, callResult, objecteFusionat,
     mapArraySquare, filterArrayEven, findArrayFirstNum, reduceArraySuma, arrayMultiMake, arrayEvery, arraySome, 
-    arrayForEachNames, arrayForOf, newArrayFilter, forInKeyValue, numerosBreak, forOfIndex } from "./functions.js"
+    arrayForEachNames, arrayForOf, newArrayFilter, forInKeyValue, numerosBreak, forOfIndex,
+    functionPromise, functionPromiseThen, functionPromiseReject, functionAsyncAwait, functionTryCatch, promiseAll } from "./functions.js"
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
     // --------------------------------------------------
     //  Exercici 1.1
-    // Conversió de funcions: Tens una funció add que accepta dos paràmetres i retorna la seva suma. 
-    // Converteix-la en una funció de fletxa. Per exemple: function add(a, b) {return a + b;}.
+        // Conversió de funcions: Tens una funció add que accepta dos paràmetres i retorna la seva suma. 
+        // Converteix-la en una funció de fletxa. Per exemple: function add(a, b) {return a + b;}.
 
     function getInputsSum(){
         const num1 = parseFloat(document.getElementById("number1").value);
@@ -38,10 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         const {num1, num2, resultSuma } = getInputsSum();
+
         const validate = validateSuma();
         if(validate){
             const suma = add(num1, num2); 
-            print(resultSuma, `La suma de ${num1} i ${num2} es ${suma}`);
+            print(resultSuma, `${num1} + ${num2} = ${suma}`);
         } else {
             print (resultSuma, validate === "empty"
                 ? messages.isEmpty
@@ -50,10 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+
     // --------------------------------------------------
     // Exercici 1.2
-    // Funció de fletxa sense paràmetres: Crea una funció de fletxa anomenada randomNumber que no necessiti paràmetres 
-    // i que retorni un número aleatori entre 0 i 100.
+        // Funció de fletxa sense paràmetres: Crea una funció de fletxa anomenada randomNumber que no necessiti paràmetres 
+        // i que retorni un número aleatori entre 0 i 100.
 
     const buttonRandom = document.getElementById("buttonRandom");
 
@@ -70,11 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
         print( resultRandomNum, randomNum);
     })
 
+
     // --------------------------------------------------
     // Exercici 1.1.3
-    // Ús de 'this' en les funcions de fletxa: Crea una classe person que tingui una propietat name i una funció greet 
-    // que utilitzi una funció de fletxa. La funció ha d'imprimir una salutació que inclogui el nom de la persona. 
-    // Per exemple: console.log(Hola, ${this.name});.
+        // Ús de 'this' en les funcions de fletxa: Crea una classe person que tingui una propietat name i una funció greet 
+        // que utilitzi una funció de fletxa. La funció ha d'imprimir una salutació que inclogui el nom de la persona. 
+        // Per exemple: console.log(Hola, ${this.name});.
 
     function getInputsPerson() {
         const namePerson = document.getElementById("inputName").value;
@@ -106,33 +111,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+
     // --------------------------------------------------
     // Exercici 1.1.4
-    // Funció de fletxa dins d'un loop: Crea una funció anomenada printNumbers que accepti un array de números 
-    // i utilitzi un loop for per imprimir cada número a la consola utilitzant una funció de fletxa.
+        // Funció de fletxa dins d'un loop: Crea una funció anomenada printNumbers que accepti un array de números 
+        // i utilitzi un loop for per imprimir cada número a la consola utilitzant una funció de fletxa.
 
     const arrayButton = document.getElementById("arrayButton");
 
     arrayButton.addEventListener("click", () => {   
-        console.clear()
+        console.clear();
         returnNumbers(); 
     });
 
+
     // --------------------------------------------------
     // Exercici 1.1.5
-    // Funció de fletxa amb 'setTimeout': Crea una funció de fletxa que imprimeixi un missatge a la consola després d'esperar 3 segons.
+        // Funció de fletxa amb 'setTimeout': Crea una funció de fletxa que imprimeixi un missatge a la consola després d'esperar 3 segons.
 
     const buttonSet = document.getElementById("setTimeOutButton");
 
     buttonSet.addEventListener("click", () => {
+        console.clear();
         countDown();
     });
 
+
     // --------------------------------------------------
     // Exercici 1.2.1
-    // Operador ternari bàsic: Escriu una funció potConduir que accepti l'edat com a paràmetre 
-    // i utilitzi l'operador ternari per determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de retornar 'Pots conduir'. 
-    // Si no, ha de retornar 'No pots conduir'.
+        // Operador ternari bàsic: Escriu una funció potConduir que accepti l'edat com a paràmetre 
+        // i utilitzi l'operador ternari per determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de retornar 'Pots conduir'. 
+        // Si no, ha de retornar 'No pots conduir'.
 
     const formAge = document.getElementById("form4");
 
@@ -162,11 +171,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+
     // --------------------------------------------------
     // Exercici 1.2.2
-    // Ús amb operadors de comparació: Escriu una expressió que utilitzi l'operador ternari 
-    // per determinar quin dels dos nombres donats (num1 i num2) és més gran. Si num1 és més gran, retorna 'num1 és més gran'. 
-    // Si no, retorna 'num2 és més gran'.
+        // Ús amb operadors de comparació: Escriu una expressió que utilitzi l'operador ternari 
+        // per determinar quin dels dos nombres donats (num1 i num2) és més gran. Si num1 és més gran, retorna 'num1 és més gran'. 
+        // Si no, retorna 'num2 és més gran'.
 
     function getInputsCompare() {
         const compNum1 = parseInt(document.getElementById("compareInput1").value);
@@ -187,11 +197,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     
+
     // --------------------------------------------------
     // Exercici 1.2.3
-
-    // Ús enllaçat d'operadors ternaris: Escriu una expressió que utilitzi enllaços d'operadors ternaris 
-    // per determinar si un número és positiu, negatiu o zero.
+    // 1.2.3 - A
+        // Ús enllaçat d'operadors ternaris: Escriu una expressió que utilitzi enllaços d'operadors ternaris 
+        // per determinar si un número és positiu, negatiu o zero.
 
     function getInputsType(){
         const typeNumber = parseInt(document.getElementById("inputTypeNumber").value);
@@ -210,9 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
         print(resultTypeNumber, textNumber);
     })
 
-
-    // Operador ternari amb funcions: Crea una funció trobarMaxim que accepti tres paràmetres (a, b, c) 
-    // i utilitzi l'operador ternari per determinar el valor màxim.
+    // 1.2.3 - A
+        // Operador ternari amb funcions: Crea una funció trobarMaxim que accepti tres paràmetres (a, b, c) 
+        // i utilitzi l'operador ternari per determinar el valor màxim.
 
     function getInputsMax(){
         const maxNum1 = parseInt(document.getElementById("maxInput1").value);
@@ -231,20 +242,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const { maxNum1, maxNum2, maxNum3, resultMax } = getInputsMax()
         const numMaxim = trobarMaxim(maxNum1, maxNum2, maxNum3);
 
-        print(resultMax, `El nº mes gran es ${numMaxim}`)
+        print(resultMax, `El número més gran es ${numMaxim}`)
     });
+
 
 
     // --------------------------------------------------
     // Exercici 1.2.4
-
-    // Operador ternari dins un bucle: Escriu una funció parOImpar que accepti un array de números i utilitzi un bucle per a recórrer l'array. 
-    // Dins del bucle, utilitza l'operador ternari per a determinar si cada número és parell o imparell.
+        // Operador ternari dins un bucle: Escriu una funció parOImpar que accepti un array de números i utilitzi un bucle per a recórrer l'array. 
+        // Dins del bucle, utilitza l'operador ternari per a determinar si cada número és parell o imparell.
 
     const buttonAdd = document.getElementById("buttonAddNumbers");
     const buttonEvenOrOdd = document.getElementById("buttonEvenOrOdd");
-
-    const resultEvenOrOdd = document.getElementById("resultEvenOrOdd");
 
     const arrayElements = [];
 
@@ -259,16 +268,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     buttonEvenOrOdd.addEventListener("click", () => {
-
+        const resultEvenOrOdd = document.getElementById("resultEvenOrOdd");
         const resultParOImpar = parOImpar(arrayElements);
 
         print(resultEvenOrOdd, resultParOImpar.join(" / "));
     });
 
-    // ----------------------------------------------------------------------------------------------------
+
+    // --------------------------------------------------
     // Exercici 1.3.1
-    // Callback bàsic: Escriu una funció anomenada processar que accepti dos paràmetres: un nombre i una funció de callback. 
-    // La funció processar ha d'invocar la funció de callback, passant el nombre com a paràmetre.
+        // Callback bàsic: Escriu una funció anomenada processar que accepti dos paràmetres: un nombre i una funció de callback. 
+        // La funció processar ha d'invocar la funció de callback, passant el nombre com a paràmetre.
 
     function getInputsCB(){
         const number = parseInt(document.getElementById("inputNumberCB").value);
@@ -287,10 +297,11 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, scoreCallback);
     });
 
+
     // --------------------------------------------------
     // Exercici 1.3.2
-    // Callbacks amb operacions matemàtiques: Escriu una funció calculadora que accepti tres paràmetres: dos nombres i una funció de callback. 
-    // La funció calculadora ha d'invocar la funció de callback amb els dos nombres com a paràmetres. Després, crida calculadora amb una funció que faci la suma dels dos nombres.
+        // Callbacks amb operacions matemàtiques: Escriu una funció calculadora que accepti tres paràmetres: dos nombres i una funció de callback. 
+        // La funció calculadora ha d'invocar la funció de callback amb els dos nombres com a paràmetres. Després, crida calculadora amb una funció que faci la suma dels dos nombres.
 
     const formCallback2 = document.getElementById("formCallback2");
 
@@ -311,10 +322,11 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, scoreCallback );
     });
 
+
     // --------------------------------------------------
     // Exercici 1.3.3
-    // Ús de callbacks en funcions asíncrones: Escriu una funció esperarISaludar que accepti dos paràmetres: un nom i una funció de callback. 
-    // La funció ha d'esperar 2 segons i llavors invocar la funció de callback, passant el nom com a paràmetre.
+        // Ús de callbacks en funcions asíncrones: Escriu una funció esperarISaludar que accepti dos paràmetres: un nom i una funció de callback. 
+        // La funció ha d'esperar 2 segons i llavors invocar la funció de callback, passant el nom com a paràmetre.
 
     function getInputsCB3(){
         const name = document.getElementById("inputB3name").value;
@@ -331,15 +343,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const { name, result } = getInputsCB3();
         
         esperarISaludar(name, function(nom){
-            result.textContent = "Hola, " + nom + " con 2 segundos de retraso! xD";
+            result.textContent = "Hola, " + nom + " aquest missatge es transmet amb 2 segons de retard";
         });
       
     });
 
+
     // --------------------------------------------------
     // Exercici 1.3.4
-    // Callbacks amb arrays: Escriu una funció processarElements que accepti dos paràmetres: un array i una funció de callback. 
-    // La funció processarElements ha d'invocar la funció de callback per cada element de l'array.
+        // Callbacks amb arrays: Escriu una funció processarElements que accepti dos paràmetres: un array i una funció de callback. 
+        // La funció processarElements ha d'invocar la funció de callback per cada element de l'array.
 
     const arrayCallback = [1, 5, -4, 6, 12];
     document.getElementById("buttonCB4").addEventListener("click", () => {
@@ -358,9 +371,11 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, arrayTexts.join(" / "));
     });
 
+
+    // --------------------------------------------------
     // Exercici 1.3.5
-    // Escriu una funció processarCadena que accepti dos paràmetres: una cadena de caràcters i una funció de callback. 
-    // La funció processarCadena ha de convertir la cadena a majúscules i llavors invocar la funció de callback amb la cadena transformada.
+        // Escriu una funció processarCadena que accepti dos paràmetres: una cadena de caràcters i una funció de callback. 
+        // La funció processarCadena ha de convertir la cadena a majúscules i llavors invocar la funció de callback amb la cadena transformada.
 
     document.getElementById("buttonCB5").addEventListener("click", () => {
         const result = document.getElementById("resultCB5");
@@ -372,9 +387,11 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, textCadena);
     });
 
+
+    // --------------------------------------------------
     // Exercici 1.4.1
-    // Operador Spread en Arrays: Crea dues arrays, array1 i array2. 
-    // Utilitza l'operador spread per a crear una tercera array que contingui tots els elements de array1 i array2.
+        // Operador Spread en Arrays: Crea dues arrays, array1 i array2. 
+        // Utilitza l'operador spread per a crear una tercera array que contingui tots els elements de array1 i array2.
 
     const buttonSpreadOne = document.getElementById("buttonSpreadOne");
     buttonSpreadOne.addEventListener("click", () => {
@@ -383,9 +400,11 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, `L'Spread emprat es veuria aixi : ${sumArrays.join(", ")}`);
     });
 
+
+    // --------------------------------------------------
     // Exercici 1.4.2
-    // Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest 
-    // per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
+        // Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest 
+        // per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
 
     const arrayNumbersRest = [];
 
@@ -403,10 +422,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }  
     })
 
+
+    // --------------------------------------------------
     // Exercici 1.4.3
-    // Copiant objectes amb Spread: Crea un objecte 'objecte1'. 
-    // Després crea un segon objecte, 'objecte2', que sigui una còpia de 'objecte1' utilitzant l'operador spread. 
-    // Canvia una propietat de 'objecte2' i comprova que 'objecte1' no ha canviat.
+        // Copiant objectes amb Spread: Crea un objecte 'objecte1'. 
+        // Després crea un segon objecte, 'objecte2', que sigui una còpia de 'objecte1' utilitzant l'operador spread. 
+        // Canvia una propietat de 'objecte2' i comprova que 'objecte1' no ha canviat.
 
     const buttonSpreadThree = document.getElementById("buttonSpreadThree");
     buttonSpreadThree.addEventListener("click", () => {
@@ -416,14 +437,16 @@ document.addEventListener("DOMContentLoaded", () => {
             Segon Objecte : ${objecte2.name} ${objecte2.mail} (copiat i modificat)`)
     })
 
+
+    // --------------------------------------------------
     // 1.4.4 
-    // Rest en Destructuring: Crea una array amb diversos elements. 
-    // Utilitza destructuring i l'operador rest per a assignar els primers dos elements a variables, 
-    // i després assignar la resta dels elements a una tercera variable.
+        // Rest en Destructuring: Crea una array amb diversos elements. 
+        // Utilitza destructuring i l'operador rest per a assignar els primers dos elements a variables, 
+        // i després assignar la resta dels elements a una tercera variable.
 
     const buttonRestFour = document.getElementById("buttonRestFour");
     buttonRestFour.addEventListener("click", () => {
-        
+        console.clear();
         const [ element1, element2, ...resta ] = arrayRestTwo;
 
         console.log(arrayRestTwo);
@@ -433,9 +456,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
+    // --------------------------------------------------
     // 1.4.5 
-    // Spread en Funcions: Crea una funció que accepti tres arguments.
-    // Després, crea una array amb tres elements i crida la funció utilitzant l'operador spread amb aquesta array.
+        // Spread en Funcions: Crea una funció que accepti tres arguments.
+        // Després, crea una array amb tres elements i crida la funció utilitzant l'operador spread amb aquesta array.
 
     const buttonSpreadFive = document.getElementById("buttonSpreadFive");
     buttonSpreadFive.addEventListener("click", () => {
@@ -444,18 +469,23 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, callResult.join(" / "))
     });
 
+
+    // --------------------------------------------------
     // 1.4.6 
-    // Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. 
-    // Utilitza l'operador spread per a fusionar aquests dos objectes en un de nou.
+        // Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. 
+        // Utilitza l'operador spread per a fusionar aquests dos objectes en un de nou.
 
     const buttonSpreadSix = document.getElementById("buttonSpreadSix");
     buttonSpreadSix.addEventListener("click", () => {
+        console.clear();
         console.log(objecteFusionat)
 
     });
 
+
+    // --------------------------------------------------
     // 1.5.1
-    // Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.
+        // Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.
     
     const buttonMap = document.getElementById("buttonMap");
     buttonMap.addEventListener("click", () => {
@@ -464,8 +494,10 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, mapArraySquare.join(" / "))
     });
 
+
+    // --------------------------------------------------
     // 1.5.2
-    // Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
+        // Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
 
     const buttonFilter = document.getElementById("buttonFilter");
     buttonFilter.addEventListener("click", () => {
@@ -474,9 +506,10 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, filterArrayEven.join(" / "));
     });
 
-    
+
+    // --------------------------------------------------
     // 1.5.3
-    // Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.
+        // Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.
 
     const buttonFind = document.getElementById("buttonFind");
     buttonFind.addEventListener("click", () => {
@@ -485,8 +518,10 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, findArrayFirstNum);
     });
 
+
+    // --------------------------------------------------
     // 1.5.4
-    // Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular la suma total dels números.
+        // Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular la suma total dels números.
 
     const buttonReduce = document.getElementById("buttonReduce");
     buttonReduce.addEventListener("click", () => {
@@ -495,12 +530,14 @@ document.addEventListener("DOMContentLoaded", () => {
         print( result, reduceArraySuma)
     });
 
+
+    // --------------------------------------------------
     // 1.5.5
-    //Donat un array "[ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]", crea una funció en una sola línia que faci el següent:
-        // - Filtra els nombres majors o iguals a 10.
-        // - Multiplica cada nombre filtrat per 2.
-        // - Calcula la suma dels nombres filtrats i multiplicats per 2.
-        // - La funció ha de retornar el resultat de la suma.
+        //Donat un array "[ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]", crea una funció en una sola línia que faci el següent:
+            // - Filtra els nombres majors o iguals a 10.
+            // - Multiplica cada nombre filtrat per 2.
+            // - Calcula la suma dels nombres filtrats i multiplicats per 2.
+            // - La funció ha de retornar el resultat de la suma.
 
     const buttonMulti = document.getElementById("buttonMulti");
     buttonMulti.addEventListener("click", () => {
@@ -509,8 +546,11 @@ document.addEventListener("DOMContentLoaded", () => {
         print( result, arrayMultiMake)
     });
 
+
+    // --------------------------------------------------
     // 1.5.6 
-    // Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament
+        // Every / Some: 
+        // Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament
 
     function getInputsEveryAndSome(){
         const result = document.getElementById("resultEveryAndSome");
@@ -520,37 +560,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttonEvery = document.getElementById("buttonEvery");
     buttonEvery.addEventListener("click", () => {
         const { result } = getInputsEveryAndSome();
-        print(result, arrayEvery ? "Si, tots son majors que 10" : "no, no tots son majors que 10")
+        print(result, arrayEvery ? "Sí, tots són majors que 10" : "no, no tots són majors que 10")
     });
 
     const buttonSome = document.getElementById("buttonSome");
     buttonSome.addEventListener("click", () => {
         const { result } = getInputsEveryAndSome();
 
-        print(result, arraySome ? "Si, algun/s número es major que 10" : "no, cap número es major que 10")
+        print(result, arraySome ? "Sí, algun número és major que 10" : "no, cap número és major que 10")
     });
 
+
+    // --------------------------------------------------
     // 1.6.1
-    // forEach: Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: 
-    // let noms = ['Anna', 'Bernat', 'Clara'];
+        // forEach: 
+        // Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: 
+        // let noms = ['Anna', 'Bernat', 'Clara'];
 
     const buttonForEachName = document.getElementById("buttonForEachName");
     buttonForEachName.addEventListener("click", () => {
-        arrayForEachNames()
+        console.clear();
+        arrayForEachNames();
     })
 
+
+    // --------------------------------------------------
     // 1.6.2
-    // for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: 
-    // let noms = ['Anna', 'Bernat', 'Clara'];
+        // for-of: 
+        // Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: 
+        // let noms = ['Anna', 'Bernat', 'Clara'];
 
     const buttonForOfName = document.getElementById("buttonForOfName");
     buttonForOfName.addEventListener("click", () => {
+        console.clear();
         arrayForOf();
     })
     
+
+    // --------------------------------------------------
     // 1.6.3
-    // filter: Teniu una array de números. Utilitza filter per a crear una nova array que només contingui els números parells. 
-    // let numeros = [1, 2, 3, 4, 5, 6];
+        // filter: 
+        // Teniu una array de números. Utilitza filter per a crear una nova array que només contingui els números parells. 
+        // let numeros = [1, 2, 3, 4, 5, 6];
 
     const buttonFilterArray = document.getElementById("buttonFilterArray") ;
     buttonFilterArray.addEventListener("click", () => {
@@ -558,9 +609,12 @@ document.addEventListener("DOMContentLoaded", () => {
         print(result, newArrayFilter.join(" / "))
     });
 
+
+    // --------------------------------------------------
     // 1.6.4
-    // for-in: Teniu un objecte amb parells clau-valor: let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' }; 
-    // Utilitza un bucle for-in per a imprimir a la consola cada clau i el seu valor corresponent.
+        // for-in: 
+        // Teniu un objecte amb parells clau-valor: let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' }; 
+        // Utilitza un bucle for-in per a imprimir a la consola cada clau i el seu valor corresponent.
 
     const buttonForInKeyValue = document.getElementById("buttonForInKeyValue");
     buttonForInKeyValue.addEventListener("click", () => {
@@ -568,9 +622,12 @@ document.addEventListener("DOMContentLoaded", () => {
         forInKeyValue();
     })
 
+
+    // --------------------------------------------------
     // 1.6.5
-    // for-of amb break: Teniu una array de números. Utilitza un bucle for-of per a imprimir a la consola els números fins a trobar el número 5,
-    // llavors atura el bucle: let numeros = [1, 2, 3, 4, 5, 6];
+        // for-of amb break: 
+        // Teniu una array de números. Utilitza un bucle for-of per a imprimir a la consola els números fins a trobar el número 5,
+        // llavors atura el bucle: let numeros = [1, 2, 3, 4, 5, 6];
     
     const buttonNumbersBreak = document.getElementById("buttonNumbersBreak");
     buttonNumbersBreak.addEventListener("click", () => {
@@ -578,9 +635,12 @@ document.addEventListener("DOMContentLoaded", () => {
         numerosBreak();
     });
 
+
+    // --------------------------------------------------
     // 1.6.6
-    // for-of amb index: Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index): 
-    // let noms = ['Anna', 'Bernat', 'Clara']
+        // for-of amb index: 
+        // Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index): 
+        // let noms = ['Anna', 'Bernat', 'Clara']
 
     const buttonForOfIndex = document.getElementById("buttonForOfIndex");
     buttonForOfIndex.addEventListener("click", () => {
@@ -588,78 +648,73 @@ document.addEventListener("DOMContentLoaded", () => {
         forOfIndex();
     });
 
-    
-    
+
+    // --------------------------------------------------
+    // 1.7.1
+        // Creació d'una Promesa: 
+        // Crea una promesa que es resolgui després de 2 segons i que retorni la cadena de text 'Hola, món'.
+
+    document.getElementById("buttonPromise").addEventListener("click", () => {
+        console.clear();
+        functionPromise().then( resultat => {
+            console.log(resultat)
+        })
+    });
 
 
-    
-    
-    
+    // --------------------------------------------------
+    // 1.7.2
+        // Utilització d'una Promesa: 
+        // Utilitza la promesa creada en l'exercici anterior. Crea un .then que imprimeixi el resultat a la consola.
 
-    
-
-
-     
-    
-     
-
-
-
-
-
-    
-    
-    
-
-
-
-
+    document.getElementById("buttonPromiseThen").addEventListener("click", () => {
+        console.clear();
+        functionPromiseThen();
+    })
     
 
+    // --------------------------------------------------
+    // 1.7.3
+        // Promesa amb reject: 
+        // Crea una promesa que es resolgui després de 2 segons si l'input és igual a 'Hola', i que la rebutgi si l'input és qualsevol altra cosa.
+
+    document.getElementById("buttonPromiseReject").addEventListener("click", () => {
+        const textInput = document.getElementById("inputPromiseReject").value;
+        functionPromiseReject(textInput);
+    });
     
 
+    // --------------------------------------------------
+    // 1.7.4
+        // Ús de async/await: 
+        // Escriu una funció asíncrona que utilitzi la funció await per a esperar el resultat de la promesa creada a l'exercici 1,
+        // i que després imprimeixi aquest resultat a la consola.
 
-
-
+    document.getElementById("buttonAsyncAwait").addEventListener("click", () => {
+        console.clear();
+        functionAsyncAwait();
+    })
     
 
+    // --------------------------------------------------
+    // 1.7.5
+        // Gestió d'errors amb async/await: Modifica la funció de l'exercici 4 per a que capturi qualsevol possible error utilitzant un bloc try/catch.
+
+    document.getElementById("buttonTryCatch").addEventListener("click", () => {
+        console.clear();
+        functionTryCatch();
+    })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // --------------------------------------------------
+    // 1.7.6
+        // Promise.all: Crea dues promeses que es resolguin després de 2 i 3 segons, respectivament. 
+        // Utilitza Promise.all per a esperar que ambdues promeses es resolguin, i imprimeix els resultats a la consola.
+    
+    document.getElementById("buttonPromiseAll").addEventListener("click", () => {
+        console.clear();
+        promiseAll();
+    });
+    
+    
 }); // DOMContentLoaded
-
-
-
-
-
-
-
