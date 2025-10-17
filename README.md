@@ -1,6 +1,7 @@
 # S2.1. Exercicis bàsics JavaScript
 
-Descripció:
+##Descripció:
+
 Aquest és un projecte per repassar i consolidar els coneixements sobre diverses estructures de control en JavaScript. Al llarg del projecte s’aprenen i es practiquen diferents estructures com:
 - Funcions fletxa (Arrow Functions)
 - Operador ternari
