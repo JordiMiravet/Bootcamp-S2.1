@@ -125,6 +125,7 @@ export const parOImpar = (arrayElements) => {
             : `${arrayElements[i]} es impar`;
         arrayEvenOrOdd.push(element);
     }
+    
 
     return arrayEvenOrOdd;
 }
@@ -236,8 +237,8 @@ const [ element1, element2, ...resta ] = arrayRestTwo;
     // Spread en Funcions: Crea una funció que accepti tres arguments.
     // Després, crea una array amb tres elements i crida la funció utilitzant l'operador spread amb aquesta array.
 
- const threeArguments = (a, b, ...c) => {
-    return [a , b , ...c];
+const threeArguments = (a, b, c) => {
+    return [a , b , c];
 }
 
 const arrayThreeArguments = ["Pilota", false , 99 ];
