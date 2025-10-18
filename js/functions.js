@@ -2,7 +2,7 @@
 
 
 
-// --------------------------------------------------// --------------------------------------------------
+// --------------------------------------------------
 // Exercici 1.1.1
     // Conversió de funcions: Tens una funció add que accepta dos paràmetres i retorna la seva suma. 
     // Converteix-la en una funció de fletxa. Per exemple: function add(a, b) {return a + b;}.
@@ -44,27 +44,16 @@ export function createPerson(name) {
     // Funció de fletxa dins d'un loop: Crea una funció anomenada printNumbers que accepti un array de números 
     // i utilitzi un loop for per imprimir cada número a la consola utilitzant una funció de fletxa.
 
-export const returnNumbers = () => {
-
-    const arrayNumbers = []
-    for(let i = 0; i < 5; i++){
-        const randomNumber = Math.floor(Math.random() * 100) + 1;
-        arrayNumbers.push(randomNumber);
-    };
-    
-    for(let i = 0; i < arrayNumbers.length; i++) {
-        console.log(arrayNumbers[i])
-    }
-};
+export const printNumbers = (arr = []) => arr.forEach( n => console.log(n));
 
 
 // --------------------------------------------------
 // Exercici 1.1.5 
     // Funció de fletxa amb 'setTimeout': Crea una funció de fletxa que imprimeixi un missatge a la consola després d'esperar 3 segons.
 
-export const countDown = () => setTimeout(() => {
-    console.log("Hola, aquest missatge s'ha transmès amb 3 segons de retard");
-}, 3000);
+export const countDown = (message, delay = 3000) => setTimeout(() => {
+    console.log(message);
+}, delay);
 
 
 // --------------------------------------------------
@@ -231,6 +220,8 @@ export const objecte1 = {
 
 export const objecte2 = {...objecte1, name: "Marc", mail: "marcviaplana.dev@gmail.com"}
 
+
+// --------------------------------------------------
 // 1.4.4 
     // Rest en Destructuring: Crea una array amb diversos elements. 
     // Utilitza destructuring i l'operador rest per a assignar els primers dos elements a variables, 
@@ -239,6 +230,8 @@ export const objecte2 = {...objecte1, name: "Marc", mail: "marcviaplana.dev@gmai
 export const arrayRestTwo = [2, "pedra", null, true, "casa", 53]
 const [ element1, element2, ...resta ] = arrayRestTwo;
 
+
+// --------------------------------------------------
 // 1.4.5 
     // Spread en Funcions: Crea una funció que accepti tres arguments.
     // Després, crea una array amb tres elements i crida la funció utilitzant l'operador spread amb aquesta array.
@@ -250,6 +243,8 @@ const [ element1, element2, ...resta ] = arrayRestTwo;
 const arrayThreeArguments = ["Pilota", false , 99 ];
 export const callResult = threeArguments(...arrayThreeArguments)
 
+
+// --------------------------------------------------
 // 1.4.6 
     // Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. 
     // Utilitza l'operador spread per a fusionar aquests dos objectes en un de nou.
@@ -265,6 +260,8 @@ const objecteFusio2 = {
 
 export const objecteFusionat = { ...objecteFusio1, ...objecteFusio2 };
 
+
+// --------------------------------------------------
 // 1.5.1
     // Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.
 
@@ -272,6 +269,7 @@ const mapArray = [1, 2, 3, 4]
 export const mapArraySquare = mapArray.map( (n) => n**2 );
 
 
+// --------------------------------------------------
 // 1.5.2
     // Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
 
@@ -279,18 +277,24 @@ const filterArray = [1, 2, 3, 4];
 
 export const filterArrayEven = filterArray.filter( n => n % 2 === 0);
 
+
+// --------------------------------------------------
 // 1.5.3
     // Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.
 
 const findArray = [1, 10 , 8, 11];
 export const findArrayFirstNum = findArray.find( n => n > 10);
 
+
+// --------------------------------------------------
 // 1.5.4
     // Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular la suma total dels números.
 
 const reduceArray = [13, 7, 8, 21];
 export const reduceArraySuma = reduceArray.reduce((base, n) => base += n, 0);
 
+
+// --------------------------------------------------
 // 1.5.5
     //Donat un array "[ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]", crea una funció en una sola línia que faci el següent:
         // - Filtra els nombres majors o iguals a 10.
@@ -301,6 +305,8 @@ export const reduceArraySuma = reduceArray.reduce((base, n) => base += n, 0);
 const arrayMulti = [ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ];
 export const arrayMultiMake = arrayMulti.filter(n => n >= 10).map(n => n*2).reduce((base, n) => base + n, 0);
 
+
+// --------------------------------------------------
 // 1.5.6 
     // Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament
 
@@ -310,6 +316,8 @@ const arrayEveryAndSome = [11, 12, 13, 14];
 export const arrayEvery = arrayEveryAndSome.every(numberMoreThanTen);
 export const arraySome = arrayEveryAndSome.some(numberMoreThanTen);
 
+
+// --------------------------------------------------
 // 1.6.1
     // forEach: Teniu una array de noms. Utilitza forEach per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];
 
@@ -318,6 +326,8 @@ const arrayForEach = ['Anna', 'Bernat', 'Clara'];
     // const arrayForEachNames = arrayForEach.forEach( name => console.log(name))
 export function arrayForEachNames(){ arrayForEach.forEach( name => console.log(name)); } 
 
+
+// --------------------------------------------------
 // 1.6.2
     // for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];
 
@@ -329,6 +339,8 @@ export function arrayForOf(){
     }
 }
 
+
+// --------------------------------------------------
 // 1.6.3
     // filter: Teniu una array de números. Utilitza filter per a crear una nova array que només contingui els números parells. 
     // let numeros = [1, 2, 3, 4, 5, 6];
@@ -336,6 +348,8 @@ export function arrayForOf(){
 const arrayFilter = [1, 2, 3, 4, 5, 6];
 export const newArrayFilter = arrayFilter.filter(n => n % 2 === 0)
 
+
+// --------------------------------------------------
 // 1.6.4
     // for-in: Teniu un objecte amb parells clau-valor: let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' }; 
     // Utilitza un bucle for-in per a imprimir a la consola cada clau i el seu valor corresponent.
@@ -348,6 +362,8 @@ export const forInKeyValue = () => {
     }
 }
 
+
+// --------------------------------------------------
 // 1.6.5
     // for-of amb break: Teniu una array de números. Utilitza un bucle for-of per a imprimir a la consola els números fins a trobar el número 5,
     // llavors atura el bucle: let numeros = [1, 2, 3, 4, 5, 6];
@@ -363,6 +379,8 @@ export const numerosBreak = () => {
     console.log(newNumeros)
 }
 
+
+// --------------------------------------------------
 // 1.6.6
     // for-of amb index: Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index): 
     // let noms = ['Anna', 'Bernat', 'Clara']
@@ -375,6 +393,8 @@ export const forOfIndex = () => {
     }
 }
 
+
+// --------------------------------------------------
 // 1.7.1
     // Creació d'una Promesa: Crea una promesa que es resolgui després de 2 segons i que retorni la cadena de text 'Hola, món'.
 
@@ -386,6 +406,8 @@ export function functionPromise(){
     });
 }
 
+
+// --------------------------------------------------
 // 1.7.2
     // Utilització d'una Promesa: Utilitza la promesa creada en l'exercici anterior. Crea un .then que imprimeixi el resultat a la consola.
 
@@ -396,6 +418,8 @@ export const functionPromiseThen = () => {
     promise.then((resultat) => console.log(resultat));
 }
 
+
+// --------------------------------------------------
 // 1.7.3
     // Promesa amb reject: 
     // Crea una promesa que es resolgui després de 2 segons si l'input és igual a 'Hola', i que la rebutgi si l'input és qualsevol altra cosa.
@@ -412,6 +436,8 @@ export const functionPromiseReject = (input) => {
     promiseReject.then((result) => console.log(result))
 }
 
+
+// --------------------------------------------------
 // 1.7.4
     // Ús de async/await: Escriu una funció asíncrona que utilitzi la funció await per a esperar el resultat de la promesa creada a l'exercici 1,
     // i que després imprimeixi aquest resultat a la consola.
@@ -425,6 +451,8 @@ export const functionAsyncAwait = async () => {
     console.log(promise);
 }
 
+
+// --------------------------------------------------
 // 1.7.5
     // Gestió d'errors amb async/await: Modifica la funció de l'exercici 4 per a que capturi qualsevol possible error utilitzant un bloc try/catch.
 
@@ -445,6 +473,8 @@ export const functionTryCatch = async () => {
     }
 }
 
+
+// --------------------------------------------------
 // 1.7.6
     // Promise.all: Crea dues promeses que es resolguin després de 2 i 3 segons, respectivament. 
     // Utilitza Promise.all per a esperar que ambdues promeses es resolguin, i imprimeix els resultats a la consola.

@@ -1,7 +1,7 @@
 "use strict"
 
 import { messages, isEmpty, isNotNumber, isOutOfRange, print } from "./helpers.js";
-import { add, randomNumber, createPerson, returnNumbers, countDown,
+import { add, randomNumber, createPerson, printNumbers, countDown,
     potConduir, compareNumbers, determineNumberType, trobarMaxim, parOImpar,
     processar, calculadoraCB, esperarISaludar, processarElements, processarCadena, 
     sumArrays, sumarRest, objecte1, objecte2, arrayRestTwo, callResult, objecteFusionat,
@@ -117,11 +117,22 @@ document.addEventListener("DOMContentLoaded", () => {
         // Funció de fletxa dins d'un loop: Crea una funció anomenada printNumbers que accepti un array de números 
         // i utilitzi un loop for per imprimir cada número a la consola utilitzant una funció de fletxa.
 
-    const arrayButton = document.getElementById("arrayButton");
-
-    arrayButton.addEventListener("click", () => {   
+    const arrayArrow = document.getElementById("formArrayArrow");
+    arrayArrow.addEventListener("submit", (e) => { 
+        e.preventDefault();
         console.clear();
-        returnNumbers(); 
+
+        const num = parseInt(document.getElementById("inputArrayArrow").value);  
+        if(isNotNumber(num)) return console.log(messages.isNotNumber);
+        if(isOutOfRange(num, 1, 50)) return console.log(messages.isOutOfRange);
+        
+        const randomNumbers = [];
+        for(let i = 0; i < num; i++){
+            randomNumbers.push(Math.floor(Math.random() * 100) + 1 );
+        }
+
+        console.clear();
+        printNumbers(randomNumbers); 
     });
 
 
@@ -133,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     buttonSet.addEventListener("click", () => {
         console.clear();
-        countDown();
+        countDown("Hola, aquest missatge s'ha transmès amb 3 segons de retard");
     });
 
 
