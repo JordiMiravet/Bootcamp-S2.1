@@ -11,7 +11,6 @@ import { add, randomNumber, createPerson, printNumbers, countDown,
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
     // --------------------------------------------------
     //  Exercici 1.1
         // Conversió de funcions: Tens una funció add que accepta dos paràmetres i retorna la seva suma. 
@@ -208,7 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     
-
     // --------------------------------------------------
     // Exercici 1.2.3
     // 1.2.3 - A
@@ -232,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
         print(resultTypeNumber, textNumber);
     })
 
-    // 1.2.3 - A
+    // 1.2.3 - B
         // Operador ternari amb funcions: Crea una funció trobarMaxim que accepti tres paràmetres (a, b, c) 
         // i utilitzi l'operador ternari per determinar el valor màxim.
 
@@ -356,7 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
         esperarISaludar(name, function(nom){
             result.textContent = "Hola, " + nom + " aquest missatge es transmet amb 2 segons de retard";
         });
-      
     });
 
 
@@ -369,7 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("buttonCB4").addEventListener("click", () => {
         const result = document.getElementById("resultCB4");
 
-        
         const arrayTexts = [];
 
         processarElements(arrayCallback, num => {
@@ -464,7 +460,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(element1);
         console.log(element2);
         console.log(...resta);
-
     });
 
 
@@ -490,7 +485,6 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonSpreadSix.addEventListener("click", () => {
         console.clear();
         console.log(objecteFusionat)
-
     });
 
 

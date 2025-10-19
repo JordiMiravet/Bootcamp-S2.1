@@ -1,7 +1,6 @@
 "use strict"
 
 
-
 // --------------------------------------------------
 // Exercici 1.1.1
     // Conversió de funcions: Tens una funció add que accepta dos paràmetres i retorna la seva suma. 
@@ -102,9 +101,9 @@ export const determineNumberType  = num => {
 
 export const trobarMaxim = (a, b, c) => {
     // return Math.max(a, b, c);
-    return a > b && c 
+    return a > b && a > c 
         ? a
-        : b > c && a
+        : b > c 
             ? b
             : c
 }
@@ -126,7 +125,6 @@ export const parOImpar = (arrayElements) => {
         arrayEvenOrOdd.push(element);
     }
     
-
     return arrayEvenOrOdd;
 }
 
@@ -275,7 +273,6 @@ export const mapArraySquare = mapArray.map( (n) => n**2 );
     // Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
 
 const filterArray = [1, 2, 3, 4];
-
 export const filterArrayEven = filterArray.filter( n => n % 2 === 0);
 
 
@@ -470,7 +467,6 @@ export const functionTryCatch = async () => {
         console.log("Missatge de succes :", promise );
     } catch (error) {
         console.log("Missatge d'error :", error);
-
     }
 }
 
