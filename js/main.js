@@ -24,11 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return { num1, num2, resultSuma }
     }
 
-    const validateSuma = () => {
-        const { num1, num2 } = getInputsSum();
+    const validateNums = (n1, n2) => {
 
-        if(isEmpty(num1) || isEmpty(num2)) return "empty";
-        if(isNotNumber(num1) || isNotNumber(num2)) return "notNumber";
+        if(isEmpty(n1) || isEmpty(n2)) return "empty";
+        if(isNotNumber(n1) || isNotNumber(n2)) return "notNumber";
 
         return true;
     };
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const {num1, num2, resultSuma } = getInputsSum();
 
-        const validate = validateSuma();
+        const validate = validateNums(num1, num2);
         if(validate){
             const suma = add(num1, num2); 
             print(resultSuma, `${num1} + ${num2} = ${suma}`);

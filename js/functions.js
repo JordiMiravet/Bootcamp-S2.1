@@ -50,9 +50,7 @@ export const printNumbers = (arr = []) => arr.forEach( n => console.log(n));
 // Exercici 1.1.5 
     // Funció de fletxa amb 'setTimeout': Crea una funció de fletxa que imprimeixi un missatge a la consola després d'esperar 3 segons.
 
-export const countDown = (message, delay = 3000) => setTimeout(() => {
-    console.log(message);
-}, delay);
+export const countDown = (message, delay = 3000) => setTimeout(() => console.log(message), delay);
 
 
 // --------------------------------------------------
@@ -115,8 +113,7 @@ export const trobarMaxim = (a, b, c) => {
     // Dins del bucle, utilitza l'operador ternari per a determinar si cada número és parell o imparell.
 
 export const parOImpar = (arrayElements) => {
-    const arrayEvenOrOdd = []
-    arrayEvenOrOdd.length = 0;
+    const arrayEvenOrOdd = [];
 
     for (let i = 0; i < arrayElements.length; i++) {
         let element = arrayElements[i] % 2 === 0
@@ -177,8 +174,7 @@ export function processarElements(array, callback){
     // La funció processarCadena ha de convertir la cadena a majúscules i llavors invocar la funció de callback amb la cadena transformada.
 
 export function processarCadena(cadenaCaracters, callback){
-    const cadenaUpper = cadenaCaracters.toUpperCase();
-    return callback(cadenaUpper);
+    return callback(cadenaCaracters.toUpperCase());
 }
 
 
@@ -227,7 +223,6 @@ export const objecte2 = {...objecte1, name: "Marc", mail: "marcviaplana.dev@gmai
     // i després assignar la resta dels elements a una tercera variable.
 
 export const arrayRestTwo = [2, "pedra", null, true, "casa", 53]
-const [ element1, element2, ...resta ] = arrayRestTwo;
 
 
 // --------------------------------------------------
