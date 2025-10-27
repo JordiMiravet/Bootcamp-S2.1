@@ -2,11 +2,11 @@
 
 import { messages, isEmpty, isNotNumber, isOutOfRange, print } from "./helpers.js";
 import { add, randomNumber, createPerson, printNumbers, countDown,
-    potConduir, compareNumbers, determineNumberType, trobarMaxim, parOImpar,
-    processar, calculadoraCB, esperarISaludar, processarElements, processarCadena, 
-    sumArrays, sumarRest, objecte1, objecte2, arrayRestTwo, callResult, objecteFusionat,
-    mapArraySquare, filterArrayEven, findArrayFirstNum, reduceArraySuma, arrayMultiMake, arrayEvery, arraySome, 
-    arrayForEachNames, arrayForOf, newArrayFilter, forInKeyValue, numerosBreak, forOfIndex,
+    canDrive, compareNumbers, determineNumberType, findMax, evenOrOdd,
+    process, calculatorCallback, waitAndGreet, processElements, processString, 
+    sumArrays, sumRest, objectOne, objectTwo, arrayRestTwo, callResult, mergedObject,
+    mapArraySquare, filterArrayEven, findArrayFirstNum, reduceArraySum, arrayMultiMake, arrayEvery, arraySome, 
+    arrayForEachNames, arrayForOf, newArrayFilter, forInKeyValue, numbersBreak, forOfIndex,
     functionPromise, functionPromiseThen, functionPromiseReject, functionAsyncAwait, functionTryCatch, promiseAll } from "./functions.js"
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return { num1, num2, resultSuma }
     }
 
-    const validateNums = (n1, n2) => {
+    const validateNums = (num1, num2) => {
 
-        if(isEmpty(n1) || isEmpty(n2)) return "empty";
-        if(isNotNumber(n1) || isNotNumber(n2)) return "notNumber";
+        if(isEmpty(num1) || isEmpty(num2)) return "empty";
+        if(isNotNumber(num1) || isNotNumber(num2)) return "notNumber";
 
         return true;
     };
@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const validate = validateNums(num1, num2);
         if(validate){
-            const suma = add(num1, num2); 
-            print(resultSuma, `${num1} + ${num2} = ${suma}`);
+            const sum = add(num1, num2); 
+            print(resultSuma, `${num1} + ${num2} = ${sum}`);
         } else {
             print (resultSuma, validate === "empty"
                 ? messages.isEmpty
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const validate = validateAge(age);
     
         if(validate){
-            const fitToDrive = potConduir(age);
+            const fitToDrive = canDrive(age);
             print(resultAge, fitToDrive);
         } else {
             print( resultAge, messages.isOutOfRange);
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formMax.addEventListener("submit", (e) => {
         e.preventDefault();
         const { maxNum1, maxNum2, maxNum3, resultMax } = getInputsMax()
-        const numMaxim = trobarMaxim(maxNum1, maxNum2, maxNum3);
+        const numMaxim = findMax(maxNum1, maxNum2, maxNum3);
 
         print(resultMax, `El número més gran es ${numMaxim}`)
     });
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     buttonEvenOrOdd.addEventListener("click", () => {
         const resultEvenOrOdd = document.getElementById("resultEvenOrOdd");
-        const resultParOImpar = parOImpar(arrayElements);
+        const resultParOImpar = evenOrOdd(arrayElements);
 
         print(resultEvenOrOdd, resultParOImpar.join(" / "));
     });
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const { number, result } = getInputsCB();
 
-        const scoreCallback = processar(number, (n) => n**2);
+        const scoreCallback = process(number, (num) => num**2);
         print(result, scoreCallback);
     });
 
@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const { number1, number2, result } = getInputsCB2();
     
-        const scoreCallback = calculadoraCB(number1, number2, (a, b) => a + b);
+        const scoreCallback = calculatorCallback(number1, number2, (a, b) => a + b);
         print(result, scoreCallback );
     });
 
@@ -350,8 +350,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const { name, result } = getInputsCB3();
         
-        esperarISaludar(name, function(nom){
-            result.textContent = "Hola, " + nom + " aquest missatge es transmet amb 2 segons de retard";
+        waitAndGreet(name, function(name){
+            result.textContent = "Hola, " + name + " aquest missatge es transmet amb 2 segons de retard";
         });
     });
 
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const arrayTexts = [];
 
-        processarElements(arrayCallback, num => {
+        processElements(arrayCallback, num => {
             const text = num % 2 === 0 
                 ? `${num} es par` 
                 : `${num} es impar`;
@@ -386,11 +386,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("buttonCB5").addEventListener("click", () => {
         const result = document.getElementById("resultCB5");
 
-        const textCadena = processarCadena("hola clase!", function(resultat){
-            return "Cadena amb majúscules: ", resultat
+        const textString = processString("hola clase!", function(result){
+            return "Cadena amb majúscules: ", result
         });
 
-        print(result, textCadena);
+        print(result, textString);
     });
 
 
@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
             print(result, messages.isNotNumber);
         } else {
             arrayNumbersRest.push(number)
-            print(result, sumarRest(...arrayNumbersRest));
+            print(result, sumRest(...arrayNumbersRest));
         }  
     })
 
@@ -439,8 +439,8 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonSpreadThree.addEventListener("click", () => {
         const result = document.getElementById("resultSpreadThree");
 
-        print(result, `Primer Objecte : ${objecte1.name} ${objecte1.mail}
-            Segon Objecte : ${objecte2.name} ${objecte2.mail} (copiat i modificat)`)
+        print(result, `Primer Objecte : ${objectOne.name} ${objectOne.mail}
+            Segon Objecte : ${objectTwo.name} ${objectTwo.mail} (copiat i modificat)`)
     })
 
 
@@ -453,12 +453,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttonRestFour = document.getElementById("buttonRestFour");
     buttonRestFour.addEventListener("click", () => {
         console.clear();
-        const [ element1, element2, ...resta ] = arrayRestTwo;
+        const [ element1, element2, ...rest ] = arrayRestTwo;
 
         console.log(arrayRestTwo);
         console.log(element1);
         console.log(element2);
-        console.log(...resta);
+        console.log(...rest);
     });
 
 
@@ -483,7 +483,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttonSpreadSix = document.getElementById("buttonSpreadSix");
     buttonSpreadSix.addEventListener("click", () => {
         console.clear();
-        console.log(objecteFusionat)
+        console.log(mergedObject)
     });
 
 
@@ -531,7 +531,7 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonReduce.addEventListener("click", () => {
         const result = document.getElementById("resultReduce");
 
-        print( result, reduceArraySuma)
+        print( result, reduceArraySum)
     });
 
 
@@ -636,7 +636,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttonNumbersBreak = document.getElementById("buttonNumbersBreak");
     buttonNumbersBreak.addEventListener("click", () => {
         console.clear();
-        numerosBreak();
+        numbersBreak();
     });
 
 
@@ -660,8 +660,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("buttonPromise").addEventListener("click", () => {
         console.clear();
-        functionPromise().then( resultat => {
-            console.log(resultat)
+        functionPromise().then( result => {
+            console.log(result)
         })
     });
 

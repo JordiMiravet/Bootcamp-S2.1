@@ -43,7 +43,7 @@ export function createPerson(name) {
     // Funció de fletxa dins d'un loop: Crea una funció anomenada printNumbers que accepti un array de números 
     // i utilitzi un loop for per imprimir cada número a la consola utilitzant una funció de fletxa.
 
-export const printNumbers = (arr = []) => arr.forEach( n => console.log(n));
+export const printNumbers = (arr = []) => arr.forEach( num => console.log(num));
 
 
 // --------------------------------------------------
@@ -59,7 +59,7 @@ export const countDown = (message, delay = 3000) => setTimeout(() => console.log
     // i utilitzi l'operador ternari per determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de retornar 'Pots conduir'. 
     // Si no, ha de retornar 'No pots conduir'.
 
-export const potConduir = (age) => {
+export const canDrive = (age) => {
     return age >= 18 
         ? "Pots conduir" 
         : "No pots conduir";          
@@ -97,13 +97,13 @@ export const determineNumberType  = num => {
     // Operador ternari amb funcions: Crea una funció trobarMaxim que accepti tres paràmetres (a, b, c) 
     // i utilitzi l'operador ternari per determinar el valor màxim.
 
-export const trobarMaxim = (a, b, c) => {
+export const findMax = (num1, num2, num3) => {
     // return Math.max(a, b, c);
-    return a > b && a > c 
-        ? a
-        : b > c 
-            ? b
-            : c
+    return num1 > num2 && num1 > num3 
+        ? num1
+        : num2 > num3 
+            ? num2
+            : num3
 }
 
 
@@ -112,7 +112,7 @@ export const trobarMaxim = (a, b, c) => {
     // Operador ternari dins un bucle: Escriu una funció parOImpar que accepti un array de números i utilitzi un bucle per a recórrer l'array. 
     // Dins del bucle, utilitza l'operador ternari per a determinar si cada número és parell o imparell.
 
-export const parOImpar = (arrayElements) => {
+export const evenOrOdd = (arrayElements) => {
     const arrayEvenOrOdd = [];
 
     for (let i = 0; i < arrayElements.length; i++) {
@@ -131,8 +131,8 @@ export const parOImpar = (arrayElements) => {
     // Callback bàsic: Escriu una funció anomenada processar que accepti dos paràmetres: un nombre i una funció de callback. 
     // La funció processar ha d'invocar la funció de callback, passant el nombre com a paràmetre.
 
-export function processar(nombre, callback){
-    return callback(nombre);
+export function process(name, callback){
+    return callback(name);
 }
 
 
@@ -141,8 +141,8 @@ export function processar(nombre, callback){
     // Callbacks amb operacions matemàtiques: Escriu una funció calculadora que accepti tres paràmetres: dos nombres i una funció de callback. 
     // La funció calculadora ha d'invocar la funció de callback amb els dos nombres com a paràmetres. Després, crida calculadora amb una funció que faci la suma dels dos nombres.
 
-export function calculadoraCB(n1, n2, callback){
-    return callback(n1, n2);
+export function calculatorCallback(num1, num2, callback){
+    return callback(num1, num2);
 }
 
 
@@ -151,7 +151,7 @@ export function calculadoraCB(n1, n2, callback){
     // Ús de callbacks en funcions asíncrones: Escriu una funció esperarISaludar que accepti dos paràmetres: un nom i una funció de callback. 
     // La funció ha d'esperar 2 segons i llavors invocar la funció de callback, passant el nom com a paràmetre.
 
-export function esperarISaludar(name, callback){
+export function waitAndGreet(name, callback){
     setTimeout(() => {
         callback(name);
     }, 2000);
@@ -163,7 +163,7 @@ export function esperarISaludar(name, callback){
     // Callbacks amb arrays: Escriu una funció processarElements que accepti dos paràmetres: un array i una funció de callback. 
     // La funció processarElements ha d'invocar la funció de callback per cada element de l'array.
 
-export function processarElements(array, callback){
+export function processElements(array, callback){
     array.forEach(callback);
 }
 
@@ -173,8 +173,8 @@ export function processarElements(array, callback){
     // Escriu una funció processarCadena que accepti dos paràmetres: una cadena de caràcters i una funció de callback. 
     // La funció processarCadena ha de convertir la cadena a majúscules i llavors invocar la funció de callback amb la cadena transformada.
 
-export function processarCadena(cadenaCaracters, callback){
-    return callback(cadenaCaracters.toUpperCase());
+export function processString(string, callback){
+    return callback(string.toUpperCase());
 }
 
 
@@ -193,12 +193,12 @@ export const sumArrays = [...arraySpreadOne, ...arraySpreadTwo]
     // Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest 
     // per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
 
-export const sumarRest = (...rest) =>{
-    let suma = 0;
-    rest.forEach((n) => {
-        suma += n;
+export const sumRest = (...rest) =>{
+    let sum = 0;
+    rest.forEach((num) => {
+        sum += num;
     })
-    return suma;
+    return sum;
 }
 
 
@@ -208,12 +208,12 @@ export const sumarRest = (...rest) =>{
     // Després crea un segon objecte, 'objecte2', que sigui una còpia de 'objecte1' utilitzant l'operador spread. 
     // Canvia una propietat de 'objecte2' i comprova que 'objecte1' no ha canviat.
 
-export const objecte1 = {
+export const objectOne = {
     name: "Jordi",
     mail: "jordimiravet.dev@gmail.com"
 }
 
-export const objecte2 = {...objecte1, name: "Marc", mail: "marcviaplana.dev@gmail.com"}
+export const objectTwo = {...objectOne, name: "Marc", mail: "marcviaplana.dev@gmail.com"}
 
 
 // --------------------------------------------------
@@ -243,16 +243,16 @@ export const callResult = threeArguments(...arrayThreeArguments)
     // Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. 
     // Utilitza l'operador spread per a fusionar aquests dos objectes en un de nou.
 
-const objecteFusio1 = {
+const objectFusionOne = {
     name: "Jordi",
     lastName: "Miravet"
 };
 
-const objecteFusio2 = {
+const objectFusionTwo = {
     mail: "jordimiravet.dev@gmail.com"
 };
 
-export const objecteFusionat = { ...objecteFusio1, ...objecteFusio2 };
+export const mergedObject = { ...objectFusionOne, ...objectFusionTwo };
 
 
 // --------------------------------------------------
@@ -260,7 +260,7 @@ export const objecteFusionat = { ...objecteFusio1, ...objecteFusio2 };
     // Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.
 
 const mapArray = [1, 2, 3, 4]
-export const mapArraySquare = mapArray.map( (n) => n**2 );
+export const mapArraySquare = mapArray.map( (num) => num**2 );
 
 
 // --------------------------------------------------
@@ -268,7 +268,7 @@ export const mapArraySquare = mapArray.map( (n) => n**2 );
     // Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.
 
 const filterArray = [1, 2, 3, 4];
-export const filterArrayEven = filterArray.filter( n => n % 2 === 0);
+export const filterArrayEven = filterArray.filter( num => num % 2 === 0);
 
 
 // --------------------------------------------------
@@ -276,7 +276,7 @@ export const filterArrayEven = filterArray.filter( n => n % 2 === 0);
     // Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que és major a 10.
 
 const findArray = [1, 10 , 8, 11];
-export const findArrayFirstNum = findArray.find( n => n > 10);
+export const findArrayFirstNum = findArray.find( num => num > 10);
 
 
 // --------------------------------------------------
@@ -284,7 +284,7 @@ export const findArrayFirstNum = findArray.find( n => n > 10);
     // Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular la suma total dels números.
 
 const reduceArray = [13, 7, 8, 21];
-export const reduceArraySuma = reduceArray.reduce((base, n) => base += n, 0);
+export const reduceArraySum = reduceArray.reduce((base, num) => base += num, 0);
 
 
 // --------------------------------------------------
@@ -296,14 +296,14 @@ export const reduceArraySuma = reduceArray.reduce((base, n) => base += n, 0);
         // - La funció ha de retornar el resultat de la suma.
 
 const arrayMulti = [ 1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ];
-export const arrayMultiMake = arrayMulti.filter(n => n >= 10).map(n => n*2).reduce((base, n) => base + n, 0);
+export const arrayMultiMake = arrayMulti.filter(num => num >= 10).map(num => num*2).reduce((base, num) => base + num, 0);
 
 
 // --------------------------------------------------
 // 1.5.6 
     // Every / Some: Usa every i some per a determinar si tots o alguns dels elements de l'array [11, 12, 13, 14] són majors que 10, respectivament
 
-const numberMoreThanTen = n => n > 10;
+const numberMoreThanTen = num => num > 10;
 const arrayEveryAndSome = [11, 12, 13, 14];
 
 export const arrayEvery = arrayEveryAndSome.every(numberMoreThanTen);
@@ -339,7 +339,7 @@ export function arrayForOf(){
     // let numeros = [1, 2, 3, 4, 5, 6];
 
 const arrayFilter = [1, 2, 3, 4, 5, 6];
-export const newArrayFilter = arrayFilter.filter(n => n % 2 === 0)
+export const newArrayFilter = arrayFilter.filter(num => num % 2 === 0)
 
 
 // --------------------------------------------------
@@ -347,11 +347,11 @@ export const newArrayFilter = arrayFilter.filter(n => n % 2 === 0)
     // for-in: Teniu un objecte amb parells clau-valor: let obj = { nom: Ona, edat: 25, ciutat: 'Barcelona' }; 
     // Utilitza un bucle for-in per a imprimir a la consola cada clau i el seu valor corresponent.
 
-let obj = { nom: "Ona", edat: 25, ciutat: 'Barcelona' };
+let objectKeyValue = { nom: "Ona", edat: 25, ciutat: 'Barcelona' };
 
 export const forInKeyValue = () => {
-    for( const key in obj){
-        console.log(key, ":", obj[key])
+    for( const key in objectKeyValue){
+        console.log(key, ":", objectKeyValue[key])
     }
 }
 
@@ -361,15 +361,15 @@ export const forInKeyValue = () => {
     // for-of amb break: Teniu una array de números. Utilitza un bucle for-of per a imprimir a la consola els números fins a trobar el número 5,
     // llavors atura el bucle: let numeros = [1, 2, 3, 4, 5, 6];
 
-let numeros = [1, 2, 3, 4, 5, 6]
+let numbers = [1, 2, 3, 4, 5, 6]
 
-export const numerosBreak = () => {
-    let newNumeros = [];
-    for(const numero of numeros){
-        newNumeros.push(numero);
-        if(numero === 5) break;
+export const numbersBreak = () => {
+    let newNumbers = [];
+    for(const number of numbers){
+        newNumbers.push(number);
+        if(number === 5) break;
     }
-    console.log(newNumeros)
+    console.log(newNumbers)
 }
 
 
@@ -378,11 +378,11 @@ export const numerosBreak = () => {
     // for-of amb index: Utilitza un bucle for-of per a imprimir a la consola cada element de l'array i la seva posició (index): 
     // let noms = ['Anna', 'Bernat', 'Clara']
 
-let noms = ['Anna', 'Bernat', 'Clara']
+let names = ['Anna', 'Bernat', 'Clara']
 
 export const forOfIndex = () => {
-    for(const [i, nom] of noms.entries()){
-        console.log(nom , i);
+    for(const [i, name] of names.entries()){
+        console.log(name , i);
     }
 }
 
@@ -408,7 +408,7 @@ export const functionPromiseThen = () => {
     const promise =  new Promise((resolve) => {
         setTimeout(() => resolve("Hola, món"), 2000)
     })
-    promise.then((resultat) => console.log(resultat));
+    promise.then((result) => console.log(result));
 }
 
 
