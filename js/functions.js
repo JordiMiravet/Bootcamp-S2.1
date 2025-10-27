@@ -50,7 +50,7 @@ export const printNumbers = (arr = []) => arr.forEach( num => console.log(num));
 // Exercici 1.1.5 
     // Funció de fletxa amb 'setTimeout': Crea una funció de fletxa que imprimeixi un missatge a la consola després d'esperar 3 segons.
 
-export const countDown = (message, delay = 3000) => setTimeout(() => console.log(message), delay);
+export const countDown = (message = "Hola, aquest missatge s'ha transmès amb 3 segons de retard", delay = 3000) => setTimeout(() => console.log(message), delay);
 
 
 // --------------------------------------------------
@@ -194,11 +194,7 @@ export const sumArrays = [...arraySpreadOne, ...arraySpreadTwo]
     // per a acceptar un nombre indeterminat d'arguments i retornar la seva suma.
 
 export const sumRest = (...rest) =>{
-    let sum = 0;
-    rest.forEach((num) => {
-        sum += num;
-    })
-    return sum;
+    return rest.reduce((sum, num) => sum + num, 0);
 }
 
 

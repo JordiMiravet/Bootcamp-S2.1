@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     buttonSet.addEventListener("click", () => {
         console.clear();
-        countDown("Hola, aquest missatge s'ha transmès amb 3 segons de retard");
+        countDown();
     });
 
 
